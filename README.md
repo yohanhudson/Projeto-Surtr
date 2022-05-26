@@ -1,6 +1,5 @@
-<div style= "width: 50%">
+
 # Projeto-Surtr
-</div>
 
 ## Sobre o Projeto
 
