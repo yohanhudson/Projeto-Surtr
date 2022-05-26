@@ -1,6 +1,6 @@
+<div style= "width: 50%">
 # Projeto-Surtr
-Projeto individual
-
+</div>
 
 ## Sobre o Projeto
 
