@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SURTR-Builds</title>
+  <link rel="stylesheet" href="./css/builds.css" />
+  <script src=""></script>
+</head>
+<link rel="shortcut icon" type="imagex/png" href="./assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico" />
+
+<body>
+  <header>
+    <p>SURTR</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a class="now" href="builds.html">Builds</a></li>
+        <li><a href="forun.html">Fórum</a></li>
+        <li><a href="cadastro.html">Cadastrar</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="banner1">
+    <div class="containerTotal">
+      <div class="div_tituloP">
+        <h1>Forje seu personagem</h1>
+      </div>
+      <div class="subContainer">
+
+        <div class="container1">
+          <h1>Aumentar de Nivel</h1>
+          <div class="teste">
+            <div class="div_titulo">
+              <p>Nivel</p>
+            </div>
+            <input id="ipt_nivelmax" min="1" max="713" type="number">
+          </div>
+          <h1>Pontos de atributo</h1>
+          <div class="div_pontos">
+            <div class="div_atributo">
+              <p>Vitalidade</p><a onclick="">-</a>
+              <span id="span_vitalidade">10</span><a onclick="">+</a>
+            </div>
+            <div class="div_atributo">
+              <p>Mente</p><a onclick="">-</a>
+              <span id="span_mente">10</span><a onclick="">+</a>
+            </div>
+            <div class="div_atributo">
+              <p>Fortitude</p><a onclick="">-</a>
+              <span id="span_fortitude">10</span><a onclick="">+</a>
+            </div>
+            <div class="div_atributo">
+              <p>Força</p><a onclick="">-</a>
+              <span id="span_força">10</span><a onclick="">+</a>
+            </div>
+            <div class="div_atributo">
+              <p>Destreza</p><a onclick="">-</a>
+              <span id="span_destreza">10</span><a onclick="">+</a>
+            </div>
+            <div class="div_atributo">
+              <p>Inteligência</p><a onclick="">-</a>
+              <span id="span_inteligencia">10</span><a onclick="">+</a>
+            </div>
+            <div class="div_atributo">
+              <p>Fé</p><a onclick="">-</a>
+              <span id="span_fé">10</span><a onclick="">+</a>
+            </div>
+            <div class="div_atributo">
+              <p>Arcano</p><a onclick="">-</a>
+              <span id="span_arcano">10</span><a onclick="">+</a>
+            </div>
+            <div class="div_button">
+              <button onclick="confirmar()">Confirmar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="imagem">
+          <img src="assets/images.jpg" alt="classe_personagem">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner2">
+    <div class="container_total">
+      <div class="div_titulo">
+        <h1>Dados dos Boss</h1>
+      </div>
+      <div class="div_global">
+        <div class="container2">
+          <div class="container3">
+            <h4>Selecione o Boss</h4>
+            <div>
+              <select id="slc_boss">
+                <option value="">--</option>
+                <option value="1">Margit, the Fell Omen</option>
+                <option value="2">Godrick the Grafted</option>
+                <option value="3">Red Wolf of Radagon</option>
+                <option value="4">Rennala, Queen of the Full Moon</option>
+                <option value="5">Godfrey, First Elden Lord</option>
+                <option value="6">Morgott, the Omen King</option>
+                <option value="7">Fire Giant</option>
+                <option value="8">Godskin Duo</option>
+                <option value="9">Maliketh, the Black Blade</option>
+                <option value="10">Sir Gideon Ofnir, the All-Knowing</option>
+                <option value="11">Hoarah Loux</option>
+                <option value="12">Radagon of the Golden Order</option>
+                <option value="13">Elden Beast</option>
+              </select>
+            </div>
+            <div class="div_button2">
+              <button onclick="Boss()">Mostrar</button>
+            </div>
+          </div>
+          <div class="imagem2">
+            <img class="img_boss" id="imagemBoss" src="" alt="">
+          </div>
+          <div class="container4" id="mostrar1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+
+  var Vitalidade = 10
+  var Mente = 10
+  var Fortitude = 10
+  var Força = 10
+  var Destreza = 10
+  var Inteligência = 10
+  var Fe = 10
+  var Arcano = 10
+
+  function aumentrarVitalidade() {
+    Vitalidade++
+  }
+  function aumentrarDiminuir() {
+    Vitalidade--
+  }
+
+  function confirmar(){
+    if(Mente > Fe){
+    
+    }
+  }
+
+  var imagem = []
+  var runas1 = []
+  function Boss() {
+
+    var select = Number(slc_boss.value);
+
+    var contador = 0
+
+    imagem = ["./assets/boss1.jpg", "./assets/boss2.jpeg", "./assets/boss3.jpg", "./assets/boss4.jpg", "./assets/bossteste.jpg", "./assets/boss6.jpg", "./assets/boss7.jpg", "./assets/boss8.jpg", "./assets/boss9.jpg", "./assets/boss10.jpg", "./assets/boss11.jpg", "./assets/boss12.jpg", "./assets/boss13.jpg"]
+
+    runas1 = ["12,000", "60,000", "66,000", "67,000", "72,000", "73,000", "75,000", "76,000"]
+    armas1 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas2 = ["20,000", "80,000", "88,000", "90,000", "96,000", "98,000", "100,000", "102,000"]
+    armas2 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas3 = ["14,000", "42,000", "61,600", "61,600", "61,600", "61,600", "61,600", "61,600"]
+    armas3 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas4 = ["40,000", "120,000", "132,000", "132,000", "132,000", "132,000", "132,000", "132,000"]
+    armas4 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas5 = ["150,000", "350,000", "450,000", "450,000", "450,000", "450,000", "450,000", "450,000"]
+    armas5 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas6 = ["400,000", "450,000", "500,000", "500,000", "500,000", "500,000", "500,000", "500,000"]
+    armas6 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas7 = ["180,000", "360,000", "396,000", "450,000", "450,000", "450,000", "450,000", "450,000"]
+    armas7 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas8 = ["170,000", "340,000", "374,000", "374,000", "374,000", "374,000", "374,000", "374,000"]
+    armas8 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas9 = ["220,000", "440,000", "484,000", "484,000", "484,000", "484,000", "484,000", "484,000"]
+    armas9 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas10 = ["150,000", "300,000", "330,000", "330,000", "330,000", "330,000", "330,000", "330,000"]
+    armas10 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas11 = ["300,000", "450,000", "660,000", "660,000", "660,000", "660,000", "660,000", "660,000"]
+    armas11 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas12 = ["600,000", "700,000", "750,000", "750,000", "750,000", "750,000", "750,000", "750,000"]
+    armas12 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    runas13 = ["700,000", "750,000", "900,000", "900,000", "900,000", "900,000", "900,000", "900,000"]
+    armas13 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+
+    mostrar1.innerHTML = ""
+
+
+    if (select == 1) {
+      imagemBoss.src = `${imagem[0]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Margit, the Fell Omen dropa ${runas1[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 1; contador2 <= 8; contador2++) {
+        mostrar1.innerHTML += `A top ${contador2} melhor arma é a ${armas1[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+    if (select == 2) {
+      imagemBoss.src = `${imagem[1]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Godrick the Grafted dropa ${runas2[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas2[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+    if (select == 3) {
+      imagemBoss.src = `${imagem[2]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Red Wolf of Radagon dropa ${runas3[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas3[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+    if (select == 4) {
+      imagemBoss.src = `${imagem[3]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Rennala, Queen of the Full Moon dropa ${runas4[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas4[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+    if (select == 5) {
+      imagemBoss.src = `${imagem[4]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Godfrey, First Elden Lord dropa ${runas5[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas5[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+    if (select == 6) {
+      imagemBoss.src = `${imagem[5]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Morgott, the Omen King dropa ${runas6[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 1; contador2 <= 8; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas6[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+    if (select == 7) {
+      imagemBoss.src = `${imagem[6]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Fire Giant dropa ${runas7[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas7[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+    if (select == 8) {
+      imagemBoss.src = `${imagem[7]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Godskin Duo dropa ${runas8[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas8[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+
+    if (select == 9) {
+      imagemBoss.src = `${imagem[8]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Maliketh, the Black Blade dropa ${runas9[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas9[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+
+    if (select == 10) {
+      imagemBoss.src = `${imagem[9]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Sir Gideon Ofnir, the All-Knowing dropa ${runas10[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas10[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+
+    if (select == 11) {
+      imagemBoss.src = `${imagem[10]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Hoarah Loux dropa ${runas11[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas11[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+
+    if (select == 12) {
+      imagemBoss.src = `${imagem[11]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Radagon of the Golden Order dropa ${runas12[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas12[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+
+
+    if (select == 13) {
+      imagemBoss.src = `${imagem[12]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Elden Beast dropa ${runas13[contador]} runas <br/><br/>`
+        contador++
+      }
+
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas13[contador2 - 1]}<br/><br/>`
+      }
+
+    }
+  }
+</script>
+</body>
+
+</html>

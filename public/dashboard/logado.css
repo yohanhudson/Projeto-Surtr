@@ -1,0 +1,140 @@
+@font-face {
+    font-family: Berkahi Blackletter;
+    src: url(../font/Berkahi\ Blackletter.otf);
+}
+@font-face {
+    font-family: Ring;
+    src: url(../font/RingbearerMedium-51mgZ.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    background-color: #353030;
+    color: rgb(225,225,225);
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.nomeSite{
+    font-family: Berkahi Blackletter;
+}
+header nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    
+}
+header nav ul a{
+    display: flex;
+    color: rgb(225,225,225);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+
+}
+.nome_usuario{
+    display: flex;
+    color: rgb(225,225,225);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+header p{
+    font-family: Berkahi Blackletter;
+    font-size: 6vh;
+    margin: 0%;
+    padding: 0%;
+}
+.now{
+    color: #FFC857;
+    font-weight: bold;
+}
+.banner{
+    width: 100%;
+    height: 90vh;
+    background-color: #000000;
+    color: #FFC857;
+}
+.container_global{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+.container_usuario{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+    background-color: #353030;
+}
+.div_bemvindo{
+    text-align: center;
+}
+.div_bemvindo p{
+    font-size: 30px;
+    font-family: Ring;
+}
+.div_nome{
+    font-size: 30px;
+    text-align: center;
+}
+.banner_grafico{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/fire.jpg);
+}
+.titulo_grafico{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+.titulo_grafico p{
+    font-family: Ring;
+}
+.container_graficos{
+    background-color: #353030;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
+.grafico1{
+    width: 50%;
+}
+
+.footer{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-color: #353030;
+    color: white;
+    font-size: 20px;
+}
+.bonfire{
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50%;
+  }
+  .span_msg{
+    font-size: 25px;
+    color: #ffc857;
+    font-family: Ring;
+  }
+  .graph {
+    width: 100%;
+    margin: auto;
+    padding-top: 10px;
+  }

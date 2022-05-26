@@ -1,0 +1,141 @@
+@font-face {
+    font-family: Berkahi Blackletter;
+    src: url(../font/Berkahi\ Blackletter.otf);
+}
+
+@font-face {
+    font-family: Ring;
+    src: url(../font/RingbearerMedium-51mgZ.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../assets/pedra.jpg);
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    background-color: #353030;
+    color: rgb(225, 225, 225);
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+header nav ul a {
+    display: flex;
+    color: rgb(225, 225, 225);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+.nome_usuario{
+    display: flex;
+    color: rgb(225,225,225);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+header p {
+    font-family: Berkahi Blackletter;
+    font-size: 6vh;
+    margin: 0%;
+    padding: 0%;
+}
+
+.now {
+    color: #FFC857;
+    font-weight: bold;
+}
+.dash-right{
+    margin-top: 6%;
+}
+.avisos {
+    width: 80%;
+    color: rgb(216, 216, 216);
+    margin: auto;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+}
+
+.dash-right .avisos .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dash-right .avisos .container h1{
+    font-size: 60px;
+    color: #FFC857;
+    font-family: Ring;
+}
+.dash-right .avisos .container .div-form {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.dash-right .avisos .container .div-form #form_postagem {
+    width: 100%;
+}
+
+.dash-right .avisos .div-form label {
+    width: 100%;
+}
+.dash-right .avisos .div-form textarea {
+    width: 70%;
+    border: 3px solid;
+    background-color: white;
+    border-radius: 5px;
+    resize: none
+}
+
+.dash-right .avisos .div-form button {
+    cursor: pointer;
+    font-family: Ring;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: #353030;
+    background-color: #FFC857;
+    width: 120px;
+    margin-left: 60%;
+}
+
+input{
+    font-family: Ring;
+    font-size: 15px;
+}
+
+textarea{
+    font-family: Ring;
+    font-size: 15px;
+}
+
+.div-results {
+    width: 100%;
+    color: white;
+    font-family: Ring;
+    font-size: 20px;
+}
+
+.div-results .feed-container {
+    margin-bottom: 80px;
+    color: white;
+    font-family: Ring;
+    font-size: 20px;
+}

@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Berkahi Blackletter;
+  src: url(../../font/Berkahi\ Blackletter.otf);
+}
+@font-face {
+  font-family: Ring;
+  src: url(../../font/RingbearerMedium-51mgZ.ttf);
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  background-color: #353030;
+  color: rgb(225, 225, 225);
+  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+header nav ul a {
+  display: flex;
+  color: rgb(225, 225, 225);
+  padding: 10px;
+  text-decoration: none;
+  font-size: 25px;
+}
+.nome_usuario{
+  display: flex;
+  color: rgb(225,225,225);
+  padding: 10px;
+  text-decoration: none;
+  font-size: 25px;
+}
+header p {
+  font-family: Berkahi Blackletter;
+  font-size: 6vh;
+  margin: 0%;
+  padding: 0%;
+}
+.now {
+  color: #ffc857;
+  font-weight: bold;
+}
+.banner {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../assets/1151243.jpg");
+  background-position: center;
+  background-size: 100%;
+}
+.container1 {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  height: 90%;
+  width: 90%;
+}
+.textoTeste {
+  color: rgb(225, 225, 225);
+  font-size: 30px;
+  flex-direction: column;
+  text-align: justify;
+  width: 39%;
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+}
+.banner2 {
+  display: flex;
+  background-color: black;
+  color: #fefefe;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+.Titulo {
+  font-size: 40px;
+  font-family: Ring;
+  color: #ffc857;
+}
+iframe {
+  width: 70%;
+  height: 70%;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #353030;
+  color: white;
+  font-size: 20px;
+}

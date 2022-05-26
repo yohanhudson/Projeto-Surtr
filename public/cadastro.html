@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surtr-Cadastrar</title>
+  <link rel="stylesheet" href="./css/Cadastro_style.css" />
+  <script src="js/funcoes.js"></script>
+</head>
+<link rel="shortcut icon" type="imagex/png" href="./assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico" />
+
+<body>
+  <header>
+    <p>SURTR</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="builds.html">Builds</a></li>
+        <li><a href="./forun.html">Fórum</a></li>
+        <li><a class="now" href="cadastro.html">Cadastrar</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="banner">
+    <div class="container">
+      <div class="titulo">
+        <p>Deseja começar essa aventura?</p>
+      </div>
+        <div class="lista">
+          <label for="ipt_Nome">Nome:</label>
+          <input id="ipt_Nome" type="text" placeholder="username" />
+
+          <label for="ipt_Email">Email:</label>
+          <input id="ipt_Email" type="text" placeholder="seuemail@gmail.com" />
+
+          <label for="ipt_Plataforma">Plataforma:</label>
+          <select name="" id="slc_plataforma">
+            <option value="0">--</option>
+            <option value="1">PC</option>
+            <option value="2">Playstation</option>
+            <option value="3">XBOX</option>
+          </select>
+
+          <label for="ipt_Senha">Senha:</label>
+          <input id="ipt_Senha" type="password" placeholder="password" />
+
+          <label for="ipt_Confirma_Senha">Confirma Senha:</label>
+          <input id="ipt_Confirma_Senha" type="password" placeholder="password" />
+
+          <button class="btn" onclick="cadastrar()">Cadastrar</button>
+          <div id="mensagem_erro" style="display: none"></div>
+        </div>
+      </div>
+      <div class="bonfire" id="div_aguardar">
+        <img src="assets/bonfire.gif" alt="">
+        <span class="span_msg">Carregando</span>
+      </div>
+  </div>
+  <div class="footer">
+    <div class="container2">
+      <h4>
+        Todos os direitos autorais revervados para Yohan Hudson - SPtech
+        &copy; 2022
+      </h4>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  function cadastrar() {
+    aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = ipt_Nome.value;
+    var emailVar = ipt_Email.value;
+    var plataformaVar = slc_plataforma.value;
+    var senhaVar = ipt_Senha.value;
+    var confirmacaoSenhaVar = ipt_Confirma_Senha.value;
+
+    if (nomeVar == "" || emailVar == "" || plataformaVar == "" ||senhaVar == "" || confirmacaoSenhaVar == "") {
+      cardErro.style.display = "block"
+      mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+      finalizarAguardar();
+      return false;
+    }
+    else {
+      setInterval(sumirMensagem, 5000)
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        plataformaServer: plataformaVar,
+        senhaServer: senhaVar
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        //cardErro.style.display = "block";
+
+        mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+        setTimeout(() => {
+          window.location = "login.html";
+        }, "2000")
+
+        //limparFormulario();
+        finalizarAguardar();
+      } else {
+        resposta.json().then(
+          function (resp) {
+            mensagem_erro.style.display = 'flex';
+            mensagem_erro.innerHTML = resp.mensagem;
+            console.log(resp);
+            finalizarAguardar();
+          }
+        );
+        //throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+      finalizarAguardar();
+    });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    // cardErro.style.display = "none"
+  }
+
+</script>
+
+<!-- else {
+  resposta.json().then(
+    function (resp) {
+      mensagem_erro.style.display = 'flex';
+      mensagem_erro.innerHTML = resp.mensagem;
+      console.log(resp);
+      finalizarAguardar();
+    } 
+  
+  essa funcao esta trazendo a informação do back end e tratando ela para ser exibido no front atraves de um json ela depende da função de validarEmail que esta no model e exibi na tela
+
+
+
+  NOTA MUDAR PRA ALERT OU MELHORAR A EXIBIÇÃO DESSA IMAGEM
+  -->

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SURTR-Inicio</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="js/funcoes.js"></script>
+
+  <link rel="shortcut icon" type="imagex/png" href="../assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico" />
+</head>
+
+<body onload="validarSessao(), atualizarFeed()">
+  <header>
+    <p>SURTR</p>
+    <nav>
+      <ul>
+        <li><a class="now" href="index_logado.html">Inicio</a></li>
+        <li><a href="./sobre_logado.html">Sobre</a></li>
+        <li><a href="./builds_logado.html">Builds</a></li>
+        <li><a href="./forun_logado.html">Fórum</a></li>
+        <li><a href="#mods">Mods</a></li>
+        <li><a href="logado.html">dashboard</a></li>
+        <a href="">|</a>
+        <div><span class="nome_usuario" id="b_usuario">seu nome</span></div>
+        <li><a href="" onclick="sair()">Sair</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="banner">
+    <div class="container1">
+      <p class="textoTeste">
+        <b>"Este é meu teste, poderia assim dizer. Provar a mim mesmo,
+          melhorar e derrubar inimigos cada vez maiores" - Alexandre, O
+          Jarro</b>
+      </p>
+    </div>
+  </div>
+  <div>
+    <div class="banner2">
+      <p class="Titulo">Trailer Elden Ring</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/gUWBmAzG_6U" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container2">
+      <h4>
+        Todos os direitos autorais revervados para Yohan Hudson - SPtech
+        &copy; 2022
+      </h4>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+// let proximaAtualizacao;
+
+// window.onload = obterDadosGrafico(1);
+
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+//verificar_autenticacao();
+
+// altere aqui como os dados serão exibidos
+// e como são recuperados do BackEnd
+// function obterDadosGrafico(idAquario) {
+//   if (proximaAtualizacao != undefined) {
+//     clearTimeout(proximaAtualizacao);
+//   }
+
+//   fetch(`/medidas/ultimas/${idAquario}`, { cache: "no-store" })
+//     .then(function (response) {
+//       if (response.ok) {
+//         response.json().then(function (resposta) {
+//           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+//           resposta.reverse();
+
+//           plotarGrafico(resposta, idAquario);
+//         });
+//       } else {
+//         console.error("Nenhum dado encontrado ou erro na API");
+//       }
+//     })
+//     .catch(function (error) {
+//       console.error(
+//         `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+//       );
+//     });
+// }
+//   function sair() {
+//     aguardar();
+//     sessionStorage.clear();
+//     finalizarAguardar();
+//     window.location = "../index.html";
+// }
+</script>

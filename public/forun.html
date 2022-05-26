@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surtr-Forun</title>
+    <link rel="stylesheet" href="./dashboard/forun.css">
+    <script src="script.js"></script>
+</head>
+<link rel="shortcut icon" type="imagex/png" href="../assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico">
+
+<body>
+    <header>
+        <p>SURTR</p>
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="builds.html">Builds</a></li>
+            <li><a class="now" href="forun.html">Fórum</a></li>
+            <li><a href="cadastro.html">Cadastrar</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
+    </header>
+    <div class="dash-right">
+
+        <div class="avisos">
+            <div class="container">
+                <h1>Publicar um Comentario</h1>
+                <div class="div-form">
+                    <form id="form_postagem" method="post" onsubmit="return publicar()">
+                        <div class="container_usuario">
+                            <div class="div_imagem">
+                            <img class="imagem" src="" alt="">
+                            </div>
+                            <label id="Nome_usuario">
+                                <br>
+                            </label> teste_nome do Nome_usuario
+                            <label>
+                        </div>
+                        Descrição (máximo de 250 caracteres):
+                        <br>
+                        <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                        </label>
+                        <br>
+                        <div class="div_btn">
+                            <button>Enviar</button>
+                        </div>
+                    </form>
+                </div>
+                <h1>Comentarios</h1>
+                <div class="div-results">
+                    <div id="feed_container" class="feed-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+<script>
+    let proximaAtualizacao;
+
+window.onload = obterDadosGrafico(1);
+
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+//verificar_autenticacao();
+
+// altere aqui como os dados serão exibidos
+// e como são recuperados do BackEnd
+function obterDadosGrafico(idAquario) {
+  if (proximaAtualizacao != undefined) {
+    clearTimeout(proximaAtualizacao);
+  }
+
+  fetch(`/medidas/ultimas/${idAquario}`, { cache: "no-store" })
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+
+          plotarGrafico(resposta, idAquario);
+        });
+      } else {
+        console.error("Nenhum dado encontrado ou erro na API");
+      }
+    })
+    .catch(function (error) {
+      console.error(
+        `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+      );
+    });
+}
+  function sair() {
+    aguardar();
+    sessionStorage.clear();
+    finalizarAguardar();
+    window.location = "../index.html";
+}
+</script>
