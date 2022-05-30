@@ -41,8 +41,25 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
+
+function buscarMedia(req, res){
+    const idEmpresa = req.params.idEmpresa;
+    medidaModel.buscarMedia(idEmpresa).then((response) => {
+      res.json({response})
+    }).catch((erro) => {
+      console.log(erro);
+        console.log(
+          "Houve um erro ao buscar numero de Curtidas do mods",
+          erro.sqlMessage
+        );
+        res.status(500).json(erro.sqlMessage);
+    })
+  }
+
+
+
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
-
+    buscarMedidasEmTempoReal,
+    buscarMedia,
 }
