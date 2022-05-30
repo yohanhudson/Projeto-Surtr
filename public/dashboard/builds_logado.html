@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SURTR-Builds</title>
   <link rel="stylesheet" href="../css/builds.css" />
-  <script src=""></script>
+  <script src="../js/funcoes.js"></script>
 </head>
 <link rel="shortcut icon" type="imagex/png" href="../assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico" />
 
-<body onload="validarSessao(), atualizarFeed()">
+<body onload="validarSessao()">
   <header>
     <p>SURTR</p>
     <nav>
@@ -47,11 +47,11 @@
           <div class="div_pontos">
             <div class="div_atributo">
               <p>Vitalidade</p><a onclick="">-</a>
-              <span id="span_vitalidade">10</span><a onclick="">+</a>
+              <span id="span_vitalidade">10</span><button onclick= "aumentar('span_vitalidade', span_vitalidade.innerHTML)">+</button>
             </div>
             <div class="div_atributo">
               <p>Mente</p><a onclick="">-</a>
-              <span id="span_mente">10</span><a onclick="">+</a>
+              <span id="span_mente">10</span><a onclick="aumentar('span_mente', span_mente.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
               <p>Fortitude</p><a onclick="">-</a>
@@ -134,27 +134,25 @@
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-  var Vitalidade = 10
-  var Mente = 10
-  var Fortitude = 10
-  var Força = 10
-  var Destreza = 10
-  var Inteligência = 10
-  var Fe = 10
-  var Arcano = 10
+  var atributo = 10
 
-  function aumentrarVitalidade() {
-    Vitalidade++
-  }
-  function aumentrarDiminuir() {
-    Vitalidade--
+  function aumentar(id_atributo, sla) {
+    let teste = Number(sla);
+     teste++;
+     var tag = document.getElementById(id_atributo)
+     tag.innerHTML = teste
   }
 
-  function confirmar(){
-    if(Mente > Fe){
+
+  function diminuir(atributo) {
+
+  }
+
+  // function confirmar(){
+  //   if(Mente == Fe || ){
     
-    }
-  }
+  //   }
+  // }
 
   var imagem = []
   var runas1 = []
@@ -220,9 +218,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar1.innerHTML += `A top ${contador2} melhor arma é a ${armas1[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-    if (select == 2) {
+    }else if (select == 2) {
       imagemBoss.src = `${imagem[1]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -234,9 +230,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas2[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-    if (select == 3) {
+    }else if (select == 3) {
       imagemBoss.src = `${imagem[2]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -248,9 +242,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas3[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-    if (select == 4) {
+    }else if (select == 4) {
       imagemBoss.src = `${imagem[3]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -262,9 +254,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas4[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-    if (select == 5) {
+    }else if (select == 5) {
       imagemBoss.src = `${imagem[4]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -276,9 +266,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas5[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-    if (select == 6) {
+    }else if (select == 6) {
       imagemBoss.src = `${imagem[5]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -290,9 +278,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas6[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-    if (select == 7) {
+    }else if (select == 7) {
       imagemBoss.src = `${imagem[6]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -304,9 +290,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas7[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-    if (select == 8) {
+    }else if (select == 8) {
       imagemBoss.src = `${imagem[7]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -318,10 +302,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas8[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-
-    if (select == 9) {
+    }else if (select == 9) {
       imagemBoss.src = `${imagem[8]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -333,10 +314,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas9[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-
-    if (select == 10) {
+    }else if (select == 10) {
       imagemBoss.src = `${imagem[9]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -348,10 +326,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas10[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-
-    if (select == 11) {
+    }else if (select == 11) {
       imagemBoss.src = `${imagem[10]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -363,10 +338,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas11[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-
-    if (select == 12) {
+    }else if (select == 12) {
       imagemBoss.src = `${imagem[11]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
@@ -378,10 +350,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
         mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas12[contador2 - 1]}<br/><br/>`
       }
 
-    }
-
-
-    if (select == 13) {
+    }else {
       imagemBoss.src = `${imagem[12]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {

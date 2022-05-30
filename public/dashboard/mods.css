@@ -1,0 +1,159 @@
+@font-face {
+    font-family: Berkahi Blackletter;
+    src: url(../font/Berkahi\ Blackletter.otf);
+}
+
+@font-face {
+    font-family: Ring;
+    src: url(../font/RingbearerMedium-51mgZ.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: aliceblue;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    background-color: #353030;
+    color: rgb(225, 225, 225);
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+header nav ul a {
+    display: flex;
+    color: rgb(225, 225, 225);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+.nome_usuario{
+    display: flex;
+    color: rgb(225,225,225);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+header p {
+    font-family: Berkahi Blackletter;
+    font-size: 6vh;
+    margin: 0%;
+    padding: 0%;
+}
+
+.now {
+    color: #FFC857;
+    font-weight: bold;
+}
+.banner{
+    width: 100%;
+    height: 205vh;
+}
+
+.container{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    font-family: Ring;
+    background-color: #353030;
+    margin-top: 8%;
+    flex-direction: column;
+}
+.containerMod1{
+    width: 100%;
+    display: flex;
+    margin-top: 3%;
+    flex-direction: row;
+}
+.containerTexto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+    font-size: 20px;
+    width: 70%;
+}
+.textoMod1{
+    text-align: justify;
+}
+.div_imagem{
+    width: 40%;
+    height: 40%;
+    margin: 1%;
+}
+img{
+    width: 100%;
+}
+.containerMod2{
+    width: 100%;
+
+    display: flex;
+    margin-top: 2%;
+    flex-direction: row-reverse;
+}
+.containerMod3{
+    width: 100%;
+    display: flex;
+    margin-top: 2%;
+}
+.containerMod4{
+    width: 100%;
+  
+    display: flex;
+    margin-top: 2%;
+    flex-direction: row-reverse;    
+}
+.containerMod5{
+    width: 100%;
+   
+    display: flex;
+    margin-top: 2%;
+}
+h1{
+    color: #FFC857;
+}
+.titulo{
+    text-align: center;
+    font-size: 30px;
+}
+.tituloTexto{
+    flex-direction: column;
+}
+.div_imagemLike{
+    width: 100%;
+    height: 100%;
+}
+.div_global{
+    flex-direction: column;
+}
+.div_link{
+    text-align: center;
+}
+ a{
+    font-size: 30px;
+    color: #FFC857;
+}
+.quantidadeCurtidas{
+    text-align: center;
+}
+.containerImagem{
+    width: 20%;
+    height: 20%;
+}
+.div_total{
+    margin-bottom: 5%;
+}

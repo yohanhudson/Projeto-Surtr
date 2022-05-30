@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mods.css">
+</head>
+<link rel="shortcut icon" type="imagex/png" href="../assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico" />
+
+<body>
+    <header>
+        <p>SURTR</p>
+        <nav>
+            <ul>
+                <li><a href="./index_logado.html">Inicio</a></li>
+                <li><a href="./sobre_logado.html">Sobre</a></li>
+                <li><a href="./builds_logado.html">Builds</a></li>
+                <li><a href="./forun_logado.html">Fórum</a></li>
+                <li><a class="now" href="mods.html">Mods</a></li>
+                <li><a href="./logado.html">dashboard</a></li>
+                <a href="">|</a>
+                <div><span class="nome_usuario" id="b_usuario">seu nome</span></div>
+                <li><a href="../index.html" onclick="sair()">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="banner">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <div class="titulo">
+                <h1>Melhores Mods de Elden Ring</h1>
+            </div>
+            <div class="div_global">
+                <div class="containerMod1">
+                    <div class="div_imagem">
+                        <img src="../assets/mod1.png" alt="">
+                    </div>
+                    <div class="containerTexto">
+                        <div class="tituloMod1">
+                            <H1>New Game is Plus</H1>
+                        </div>
+                        <div class="textoMod1">
+                            Esse mod criado por um streamer chamado ""Kingly", altera o jogo para que cada
+                            dificuldade
+                            seja
+                            um passo à frente. Novo jogo é novo jogo + 1, NG+1 é NG+2, etc.
+                            Isso se aplicará a todos os seus personagens, desde que o mod esteja instalado. Se for
+                            substituído ou desinstalado, não será mais aplicado a nenhum caractere.<br><br>
+                            <a href="https://www.nexusmods.com/eldenring/mods/578">Download</a>
+                        </div>
+                    </div>
+                    <div class="containerImagem">
+                        <div class="div_imagemLike">
+                            <img id="imagem1" onclick="curti1()" src="../assets/like.png" style="display: block;">
+                            <img id="imagem2" onclick="descurti1()" src="../assets/deslike.png" style="display: none;">
+                        </div>
+                        <div class="quantidadeCurtidas">
+                            <p id="qtdCurtidas">100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div_global">
+                <div class="containerMod2">
+                    <div class="div_imagem">
+                        <img src="../assets/mod2.jpeg" alt="">
+                    </div>
+                    <div class="containerTexto">
+                        <div class="tituloMod1">
+                            <H1>New Game is Plus</H1>
+                        </div>
+                        <div class="textoMod1">
+                            Esse mod criado por "fãn desconhecido da comunidade", modifica as localização dos itens
+                            padrao do game, assim trazendo a sensação de um jogo novo para explorar novamente.<br><br>
+                            <a href="https://www.nexusmods.com/eldenring/mods/428">Download</a>
+                        </div>
+                    </div>
+                    <div class="containerImagem">
+                        <div class="div_imagemLike">
+                            <img id="imagem3" onclick="curti2()" src="../assets/like.png" style="display: block;">
+                            <img id="imagem4" onclick="descurti2()" src="../assets/deslike.png" style="display: none;">
+                        </div>
+                        <div class="quantidadeCurtidas">
+                            <p id="qtdCurtidas">100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div_global">
+                <div class="containerMod3">
+                    <div class="div_imagem">
+                        <img src="../assets/mod3.jpeg" alt="">
+                    </div>
+                    <div class="containerTexto">
+                        <div class="tituloMod1">
+                            <H1>New Game is Plus</H1>
+                        </div>
+                        <div class="textoMod1">
+                            Esse mod criado por "Garden of Eyes" inclui a invocação do Let me Solo Her, uma homenagem ao
+                            lendario jogador que fica na porta da do boss Malenia e ajuda todo mundo a derrotá-la,
+                            encarando
+                            o desafio sozinho com as suas duas katanas e capacete no formato de pote - e mais nada. Se
+                            tornou um herói!<br><br>
+                            <a href="https://www.patreon.com/GardenOfEyes"></a>Download</a>
+                        </div>
+                    </div>
+                    <div class="containerImagem">
+                        <div class="div_imagemLike">
+                            <img id="imagem5" onclick="curti3()" src="../assets/like.png" style="display: block;">
+                            <img id="imagem6" onclick="descurti3()" src="../assets/deslike.png" style="display: none;">
+                        </div>
+                        <div class="quantidadeCurtidas">
+                            <p id="qtdCurtidas">100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div_global">
+                <div class="containerMod4">
+                    <div class="div_imagem">
+                        <img src="../assets/mod4.jpg" alt="">
+                    </div>
+                    <div class="containerTexto">
+                        <div class="tituloMod1">
+                            <H1>New Game is Plus</H1>
+                        </div>
+                        <div class="textoMod1">
+                            Esse mod criado por "fãn desconhecido" add um diferencial que traz alguns dos NPCs
+                            (personagens
+                            não jogáveis) do jogo como companheiros para lutarem ao seu lado. Sempre quis ter uma
+                            Malenia de
+                            estimação? Agora você pode ter a chefe opcional do seu lado ao invés de causar dor de cabeça
+                            enfrentando-a.<br><br>
+                            <a href="https://www.nexusmods.com/eldenring/mods/414"><a>Download</a>
+                        </div>
+                    </div>
+                    <div class="containerImagem">
+                        <div class="div_imagemLike">
+                            <img id="imagem7" onclick="curti4()" src="../assets/like.png" style="display: block;">
+                            <img id="imagem8" onclick="descurti4()" src="../assets/deslike.png" style="display: none;">
+                        </div>
+                        <div class="quantidadeCurtidas">
+                            <p id="qtdCurtidas">100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div_global">
+                <div class="containerMod5">
+                    <div class="div_imagem">
+                        <img src="../assets/mod5.jpeg" alt="">
+                    </div>
+                    <div class="containerTexto">
+                        <div class="tituloMod1">
+                            <H1>New Game is Plus</H1>
+                        </div>
+                        <div class="textoMod1">
+                            Esse mod criado por "fãn desconhecido" modifica o NPC Ranni e fazendo com que tenha
+                            aparencia da
+                            Fire keeper do Dark Souls 3, para realizar um sonho de muitos jogadores onde voce pode
+                            se casar
+                            com a NPC em questão.<br><br>
+                            <a href="https://www.nexusmods.com/eldenring/mods/400">Download</a>
+                        </div>
+                    </div>
+                    <div class="containerImagem">
+                        <div class="div_imagemLike">
+                            <img id="imagem9" onclick="curti5()" src="../assets/like.png" style="display: block;">
+                            <img id="imagem10" onclick="descurti5()" src="../assets/deslike.png" style="display: none;">
+                        </div>
+                        <div class="quantidadeCurtidas">
+                            <p id="qtdCurtidas">100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    b_usuario = sessionStorage.NOME_USUARIO;
+
+    function curti1() {
+        imagem1.style.display = "none"
+        imagem2.style.display = "block"
+    }
+
+    function descurti1() {
+        imagem1.style.display = "block"
+        imagem2.style.display = "none"
+    }
+
+    function curti2() {
+        imagem3.style.display = "none"
+        imagem4.style.display = "block"
+    }
+
+    function descurti2() {
+        imagem3.style.display = "block"
+        imagem4.style.display = "none"
+    }
+
+    function curti3() {
+        imagem5.style.display = "none"
+        imagem6.style.display = "block"
+    }
+
+    function descurti3() {
+        imagem5.style.display = "block"
+        imagem6.style.display = "none"
+    }
+
+    function curti4() {
+        imagem7.style.display = "none"
+        imagem8.style.display = "block"
+    }
+
+    function descurti4() {
+        imagem7.style.display = "block"
+        imagem8.style.display = "none"
+    }
+
+    function curti5() {
+        imagem9.style.display = "none"
+        imagem10.style.display = "block"
+    }
+
+    function descurti5() {
+        imagem9.style.display = "block"
+        imagem10.style.display = "none"
+    }
+
+</script>
+
+
+<!-- 8. Sentinela da Árvore, o Trenzinho
+Esse mod criado por "skymoon" modifica o cavalo dos Sentinelas da Árvore e os coloca montados em Thomas, o Trenzinho. Caso você passe bastante raiva tentando derrotar esses chefes secundários do jogo, pelo menos dá para garantir boas risadas enquanto morre para o dano massivo do inimigo. -->
+
+<!-- 5. Jotaro e Star Platinum
+É fã de Jojo's Bizarre Adventure? Então se prepare para usar Jotaro Kujo, protagonista da terceira parte da obra, como um visual alternativo em Elden Ring. O jogador que quiser liberar seu Jojo interior, deve começar com a classe Vagabundo.
+
+"Lothric Ginger Cat", criador do mod, explica que caso o jogador use alguma parte de armadura muito diferente, você pode ativar o visual de Jotaro automaticamente. Então cabe a você escolher se quer jogar a todo momento com o personagem do mangá de Hirohiko Araki. -->
+
+
+<!-- 4. NPCs e chefes como invocação
+Um diferencial de Elden Ring para outros jogos da FromSoftware são as invocações. Esse mod traz alguns dos NPCs (personagens não jogáveis) do jogo como companheiros para lutarem ao seu lado. Sempre quis ter uma Malenia de estimação? Agora você pode ter a chefe opcional do seu lado ao invés de causar dor de cabeça enfrentando-a. -->
+
+<!-- 1. Invocação do Let me Solo Her  
+O assunto na comunidade de Elden Ring no momento é o tal Let me Solo Her, um jogador que fica na porta da dificílima chefe Malenia e ajuda todo mundo a derrotá-la, encarando o desafio sozinho com as suas duas katanas e capacete no formato de pote - e mais nada. Se tornou um herói!-->
+
+<!-- 2. Elden Ring Reforged -->
+
+<!-- 
+<div class="containerMod2">
+    <div class="div_imagem">
+        <img src="../assets/mod2.jpeg" alt="">
+    </div>
+
+    <div class="containerTexto">
+        <div class="tituloMod1">
+            <H1>Elden Ring Key Item Randomizer</H1>
+        </div>
+        <div class="textoMod1">
+            Esse mod criado por "fãn desconhecido da comunidade", modifica as localização dos itens
+            padrao do game, assim trazendo a sensação de um jogo novo para explorar novamente.<br><br>
+            <a href="https://www.nexusmods.com/eldenring/mods/428">Download</a>
+        </div>
+    </div>
+    <div class="div_imagemLike">
+        <img onclick="curti2()" src="../assets/like.png" style="display: block;">
+        <img id="imagem2" onclick="descurti2()" src="../assets/deslike.png" style="display: none;">
+    </div>
+</div>
+<div class="containerMod3">
+    <div class="div_imagem">
+        <img src="../assets/mod3.jpeg" alt="">
+    </div>
+    <div class="containerTexto">
+        <div class="tituloMod1">
+            <H1>Invocação do Let me Solo Her</H1>
+        </div>
+        <div class="textoMod1">
+            Esse mod criado por "Garden of Eyes" inclui a invocação do Let me Solo Her, uma homenagem ao
+            lendario jogador que fica na porta da do boss Malenia e ajuda todo mundo a derrotá-la, encarando
+            o desafio sozinho com as suas duas katanas e capacete no formato de pote - e mais nada. Se
+            tornou um herói!<br><br>
+            <a href="https://www.patreon.com/GardenOfEyes">Download</a>
+        </div>
+    </div>
+    <div class="div_imagemLike">
+        <img onclick="curti3()" src="../assets/like.png" style="display: block;">
+        <img id="imagem2" onclick="descurti3()" src="../assets/deslike.png" style="display: none;">
+    </div>
+    <div class="containerMod4">
+        <div class="div_imagem">
+            <img src="../assets/mod4.jpg" alt="">
+        </div>
+        <div class="containerTexto">
+            <div class="tituloMod1">
+                <H1>NPCs e chefes como invocação</H1>
+            </div>
+            <div class="textoMod1">
+                Esse mod criado por "fãn desconhecido" add um diferencial que traz alguns dos NPCs
+                (personagens
+                não jogáveis) do jogo como companheiros para lutarem ao seu lado. Sempre quis ter uma
+                Malenia de
+                estimação? Agora você pode ter a chefe opcional do seu lado ao invés de causar dor de cabeça
+                enfrentando-a.<br><br>
+                <a href="https://www.nexusmods.com/eldenring/mods/414">Download</a>
+            </div>
+        </div>
+        <div class="div_imagemLike">
+            <img onclick="curti4()" src="../assets/like.png" style="display: block;">
+            <img id="imagem2" onclick="descurti4()" src="../assets/deslike.png" style="display: none;">
+        </div>
+        <div class="containerMod5">
+            <div class="div_imagem">
+                <img src="../assets/mod5.jpeg" alt="">
+            </div>
+            <div class="containerTexto">
+                <div class="tituloMod1">
+                    <H1>Fire keeper to Ranni</H1>
+                </div>
+                <div class="textoMod1">
+                    Esse mod criado por "fãn desconhecido" modifica o NPC Ranni e fazendo com que tenha
+                    aparencia da
+                    Fire keeper do Dark Souls 3, para realizar um sonho de muitos jogadores onde voce pode
+                    se casar
+                    com a NPC em questão.<br><br>
+                    <a href="https://www.nexusmods.com/eldenring/mods/400">Download</a>
+                </div>
+            </div>
+            <div class="div_imagemLike">
+                <img onclick="curti5()" src="../assets/like.png" style="display: block;">
+                <img id="imagem2" onclick="descurti5()" src="../assets/deslike.png" style="display: none;">
+            </div>
+        </div>
+    </div> -->
