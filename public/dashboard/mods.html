@@ -70,9 +70,9 @@
                     <div class="div_imagem">
                         <img src="../assets/mod2.jpeg" alt="">
                     </div>
-                    <div class="containerTexto">
+                    <div class="containerTexto2">
                         <div class="tituloMod1">
-                            <H1>New Game is Plus</H1>
+                            <H1>Elden Ring Key Item Randomizer</H1>
                         </div>
                         <div class="textoMod1">
                             Esse mod criado por "fãn desconhecido da comunidade", modifica as localização dos itens
@@ -98,7 +98,7 @@
                     </div>
                     <div class="containerTexto">
                         <div class="tituloMod1">
-                            <H1>New Game is Plus</H1>
+                            <H1>Invocação do Let me Solo Her</H1>
                         </div>
                         <div class="textoMod1">
                             Esse mod criado por "Garden of Eyes" inclui a invocação do Let me Solo Her, uma homenagem ao
@@ -106,7 +106,7 @@
                             encarando
                             o desafio sozinho com as suas duas katanas e capacete no formato de pote - e mais nada. Se
                             tornou um herói!<br><br>
-                            <a href="https://www.patreon.com/GardenOfEyes"></a>Download</a>
+                            <a href="https://www.patreon.com/GardenOfEyes">Download</a>
                         </div>
                     </div>
                     <div class="containerImagem">
@@ -125,9 +125,9 @@
                     <div class="div_imagem">
                         <img src="../assets/mod4.jpg" alt="">
                     </div>
-                    <div class="containerTexto">
+                    <div class="containerTexto2">
                         <div class="tituloMod1">
-                            <H1>New Game is Plus</H1>
+                            <H1>NPCs e chefes como invocação</H1>
                         </div>
                         <div class="textoMod1">
                             Esse mod criado por "fãn desconhecido" add um diferencial que traz alguns dos NPCs
@@ -136,7 +136,7 @@
                             Malenia de
                             estimação? Agora você pode ter a chefe opcional do seu lado ao invés de causar dor de cabeça
                             enfrentando-a.<br><br>
-                            <a href="https://www.nexusmods.com/eldenring/mods/414"><a>Download</a>
+                            <a href="https://www.nexusmods.com/eldenring/mods/414">Download</a>
                         </div>
                     </div>
                     <div class="containerImagem">
@@ -157,7 +157,7 @@
                     </div>
                     <div class="containerTexto">
                         <div class="tituloMod1">
-                            <H1>New Game is Plus</H1>
+                            <H1>Fire keeper to Ranni</H1>
                         </div>
                         <div class="textoMod1">
                             Esse mod criado por "fãn desconhecido" modifica o NPC Ranni e fazendo com que tenha
@@ -179,6 +179,9 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
     </div>
@@ -189,9 +192,26 @@
 
     b_usuario = sessionStorage.NOME_USUARIO;
 
+    const idUsuario = sessionStorage.NOME_USUARIO;
+
+
+    function mostrarCurtidas(idUser) {
+        fetch(`http://localhost:3333/medidas/numeroCurtida/${idUser}`)
+        .then((response) => {
+            if (response > 0) {
+                response.json().then((response) => {
+                    const dados = resposta.respnse
+                    console.log(dados);
+                }) 
+            }
+        })
+           
+    }
+
+
     function curti1() {
         imagem1.style.display = "none"
-        imagem2.style.display = "block" 
+        imagem2.style.display = "block"
 
         curtiMod(1)
     }
@@ -243,113 +263,8 @@
     }
 
 
-    function curtiMod(id){
+    function curtiMod(id) {
         alert(id)
     }
 
 </script>
-
-
-<!-- 8. Sentinela da Árvore, o Trenzinho
-Esse mod criado por "skymoon" modifica o cavalo dos Sentinelas da Árvore e os coloca montados em Thomas, o Trenzinho. Caso você passe bastante raiva tentando derrotar esses chefes secundários do jogo, pelo menos dá para garantir boas risadas enquanto morre para o dano massivo do inimigo. -->
-
-<!-- 5. Jotaro e Star Platinum
-É fã de Jojo's Bizarre Adventure? Então se prepare para usar Jotaro Kujo, protagonista da terceira parte da obra, como um visual alternativo em Elden Ring. O jogador que quiser liberar seu Jojo interior, deve começar com a classe Vagabundo.
-
-"Lothric Ginger Cat", criador do mod, explica que caso o jogador use alguma parte de armadura muito diferente, você pode ativar o visual de Jotaro automaticamente. Então cabe a você escolher se quer jogar a todo momento com o personagem do mangá de Hirohiko Araki. -->
-
-
-<!-- 4. NPCs e chefes como invocação
-Um diferencial de Elden Ring para outros jogos da FromSoftware são as invocações. Esse mod traz alguns dos NPCs (personagens não jogáveis) do jogo como companheiros para lutarem ao seu lado. Sempre quis ter uma Malenia de estimação? Agora você pode ter a chefe opcional do seu lado ao invés de causar dor de cabeça enfrentando-a. -->
-
-<!-- 1. Invocação do Let me Solo Her  
-O assunto na comunidade de Elden Ring no momento é o tal Let me Solo Her, um jogador que fica na porta da dificílima chefe Malenia e ajuda todo mundo a derrotá-la, encarando o desafio sozinho com as suas duas katanas e capacete no formato de pote - e mais nada. Se tornou um herói!-->
-
-<!-- 2. Elden Ring Reforged -->
-
-<!-- 
-<div class="containerMod2">
-    <div class="div_imagem">
-        <img src="../assets/mod2.jpeg" alt="">
-    </div>
-
-    <div class="containerTexto">
-        <div class="tituloMod1">
-            <H1>Elden Ring Key Item Randomizer</H1>
-        </div>
-        <div class="textoMod1">
-            Esse mod criado por "fãn desconhecido da comunidade", modifica as localização dos itens
-            padrao do game, assim trazendo a sensação de um jogo novo para explorar novamente.<br><br>
-            <a href="https://www.nexusmods.com/eldenring/mods/428">Download</a>
-        </div>
-    </div>
-    <div class="div_imagemLike">
-        <img onclick="curti2()" src="../assets/like.png" style="display: block;">
-        <img id="imagem2" onclick="descurti2()" src="../assets/deslike.png" style="display: none;">
-    </div>
-</div>
-<div class="containerMod3">
-    <div class="div_imagem">
-        <img src="../assets/mod3.jpeg" alt="">
-    </div>
-    <div class="containerTexto">
-        <div class="tituloMod1">
-            <H1>Invocação do Let me Solo Her</H1>
-        </div>
-        <div class="textoMod1">
-            Esse mod criado por "Garden of Eyes" inclui a invocação do Let me Solo Her, uma homenagem ao
-            lendario jogador que fica na porta da do boss Malenia e ajuda todo mundo a derrotá-la, encarando
-            o desafio sozinho com as suas duas katanas e capacete no formato de pote - e mais nada. Se
-            tornou um herói!<br><br>
-            <a href="https://www.patreon.com/GardenOfEyes">Download</a>
-        </div>
-    </div>
-    <div class="div_imagemLike">
-        <img onclick="curti3()" src="../assets/like.png" style="display: block;">
-        <img id="imagem2" onclick="descurti3()" src="../assets/deslike.png" style="display: none;">
-    </div>
-    <div class="containerMod4">
-        <div class="div_imagem">
-            <img src="../assets/mod4.jpg" alt="">
-        </div>
-        <div class="containerTexto">
-            <div class="tituloMod1">
-                <H1>NPCs e chefes como invocação</H1>
-            </div>
-            <div class="textoMod1">
-                Esse mod criado por "fãn desconhecido" add um diferencial que traz alguns dos NPCs
-                (personagens
-                não jogáveis) do jogo como companheiros para lutarem ao seu lado. Sempre quis ter uma
-                Malenia de
-                estimação? Agora você pode ter a chefe opcional do seu lado ao invés de causar dor de cabeça
-                enfrentando-a.<br><br>
-                <a href="https://www.nexusmods.com/eldenring/mods/414">Download</a>
-            </div>
-        </div>
-        <div class="div_imagemLike">
-            <img onclick="curti4()" src="../assets/like.png" style="display: block;">
-            <img id="imagem2" onclick="descurti4()" src="../assets/deslike.png" style="display: none;">
-        </div>
-        <div class="containerMod5">
-            <div class="div_imagem">
-                <img src="../assets/mod5.jpeg" alt="">
-            </div>
-            <div class="containerTexto">
-                <div class="tituloMod1">
-                    <H1>Fire keeper to Ranni</H1>
-                </div>
-                <div class="textoMod1">
-                    Esse mod criado por "fãn desconhecido" modifica o NPC Ranni e fazendo com que tenha
-                    aparencia da
-                    Fire keeper do Dark Souls 3, para realizar um sonho de muitos jogadores onde voce pode
-                    se casar
-                    com a NPC em questão.<br><br>
-                    <a href="https://www.nexusmods.com/eldenring/mods/400">Download</a>
-                </div>
-            </div>
-            <div class="div_imagemLike">
-                <img onclick="curti5()" src="../assets/like.png" style="display: block;">
-                <img id="imagem2" onclick="descurti5()" src="../assets/deslike.png" style="display: none;">
-            </div>
-        </div>
-    </div> -->
