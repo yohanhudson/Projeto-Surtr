@@ -42,9 +42,9 @@ function buscarMedidasEmTempoReal(req, res) {
 }
 
 
-function buscarMedia(req, res){
-    const idEmpresa = req.params.idEmpresa;
-    medidaModel.buscarMedia(idEmpresa).then((response) => {
+function BuscarNumeroCurtidas(req, res){
+    const idUser = req.params.idUsuario;
+    medidaModel.BuscarNumeroCurtidas(idUsuario).then((response) => {
       res.json({response})
     }).catch((erro) => {
       console.log(erro);
@@ -61,5 +61,5 @@ function buscarMedia(req, res){
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    buscarMedia,
+    BuscarNumeroCurtidas,
 }
