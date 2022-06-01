@@ -42,9 +42,9 @@ function buscarMedidasEmTempoReal(req, res) {
 }
 
 
-function BuscarNumeroCurtidas(req, res){
-    const idUser = req.params.idUsuario;
-    medidaModel.BuscarNumeroCurtidas(idUsuario).then((response) => {
+function BuscarNumeroCurtida(req, res){
+    const idUser = req.params.idUser;
+    medidaModel.BuscarNumeroCurtida(idUser).then((response) => {
       res.json({response})
     }).catch((erro) => {
       console.log(erro);
@@ -61,5 +61,5 @@ function BuscarNumeroCurtidas(req, res){
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    BuscarNumeroCurtidas,
+    BuscarNumeroCurtida,
 }

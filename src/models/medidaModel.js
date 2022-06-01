@@ -50,7 +50,7 @@ function buscarMedidasEmTempoReal(idAquario) {
 }
 
 
-function BuscarNumeroCurtidas(idUser){
+function BuscarNumeroCurtida(idUser){
     const query = `select * 
     from usuario join Curtida on Curtida.fk_usuario = usuario.id
     where fk_usuario = ${idUser}`
@@ -62,5 +62,5 @@ function BuscarNumeroCurtidas(idUser){
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    BuscarNumeroCurtidas,
+    BuscarNumeroCurtida,
 }

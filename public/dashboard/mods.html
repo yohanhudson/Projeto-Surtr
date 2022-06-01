@@ -192,20 +192,19 @@
 
     b_usuario = sessionStorage.NOME_USUARIO;
 
-    const idUsuario = sessionStorage.NOME_USUARIO;
+    const idUser = sessionStorage.ID_USUARIO;
 
 
-    function mostrarCurtidas(idUser) {
-        fetch(`http://localhost:3333/medidas/numeroCurtida/${idUser}`)
+    function mostrarcurtidas(idUser) {
+        fetch(`http://localhost:3333/medidas/numerocurtida/${idUser}`)
         .then((response) => {
             if (response > 0) {
-                response.json().then((response) => {
-                    const dados = resposta.respnse
-                    console.log(dados);
+                response.json().then((resposta) => {
+                    const curitda = resposta.response
+                    console.log(curitda);
                 }) 
             }
-        })
-           
+        })   
     }
 
 
