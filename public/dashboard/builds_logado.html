@@ -47,7 +47,7 @@
           <div class="div_pontos">
             <div class="div_atributo">
               <p>Vitalidade</p><a onclick="">-</a>
-              <span id="span_vitalidade">10</span><button onclick= "aumentar('span_vitalidade', span_vitalidade.innerHTML)">+</button>
+              <span id="span_vitalidade">10</span><a onclick= "aumentar('span_vitalidade', span_vitalidade.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
               <p>Mente</p><a onclick="">-</a>
@@ -55,27 +55,27 @@
             </div>
             <div class="div_atributo">
               <p>Fortitude</p><a onclick="">-</a>
-              <span id="span_fortitude">10</span><a onclick="">+</a>
+              <span id="span_fortitude">10</span><a onclick="aumentar('span_fortitude', span_fortitude.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
               <p>Força</p><a onclick="">-</a>
-              <span id="span_força">10</span><a onclick="">+</a>
+              <span id="span_força">10</span><a onclick="aumentar('span_força', span_força.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
               <p>Destreza</p><a onclick="">-</a>
-              <span id="span_destreza">10</span><a onclick="">+</a>
+              <span id="span_destreza">10</span><a onclick="aumentar('span_destreza', span_destreza.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
               <p>Inteligência</p><a onclick="">-</a>
-              <span id="span_inteligencia">10</span><a onclick="">+</a>
+              <span id="span_inteligencia">10</span><a onclick="aumentar('span_inteligencia', span_inteligencia.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
               <p>Fé</p><a onclick="">-</a>
-              <span id="span_fé">10</span><a onclick="">+</a>
+              <span id="span_fe">10</span><a onclick="aumentar('span_fe', span_fe.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
               <p>Arcano</p><a onclick="">-</a>
-              <span id="span_arcano">10</span><a onclick="">+</a>
+              <span id="span_arcano">10</span><a onclick="aumentar('span_arcano', span_arcano.innerHTML)">+</a>
             </div>
             <div class="div_button">
               <button onclick="confirmar()">Confirmar</button>
@@ -134,10 +134,8 @@
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-  var atributo = 10
-
-  function aumentar(id_atributo, sla) {
-    let teste = Number(sla);
+  function aumentar(id_atributo, numero) {
+    let teste = Number(numero);
      teste++;
      var tag = document.getElementById(id_atributo)
      tag.innerHTML = teste

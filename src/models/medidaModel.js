@@ -58,9 +58,16 @@ function BuscarNumeroCurtida(idUser){
     return database.executar(query);
 }
 
+function InserirDados(idUser, idMod,){
+    const query = `insert into Curtida (fk_usuario, fk_mods, Curtidas) values (${idUser}, ${idMod}, 1)`
+
+    return database.executar(query)
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
     BuscarNumeroCurtida,
+    InserirDados,
 }

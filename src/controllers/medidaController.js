@@ -57,9 +57,25 @@ function BuscarNumeroCurtida(req, res){
   }
 
 
+  function InserirDados(req, res){
+      const idUser = req.params.idUser;
+      medidaModel.InserirDados(idUser).then((response) => {
+          res.json({response})
+  }).catch((erro) => {
+      console.log(erro);
+      console.log(
+          "Houve um erro ao Inserir a Curtida do usuario",
+          erro.sqlMessage
+      );
+      res.status(500).json(erro.sqlMessage);
+  })
+}
+
+
 
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
     BuscarNumeroCurtida,
+    InserirDados,
 }
