@@ -127,6 +127,7 @@
         resposta.json().then(
           function (resp) {
             mensagem_erro.style.display = 'flex';
+            alert("Email ja cadastrado, por favor usar outro email")
             mensagem_erro.innerHTML = resp.mensagem;
             console.log(resp);
             finalizarAguardar();
