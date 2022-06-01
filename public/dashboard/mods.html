@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="mods.css">
+    <script src="../js/funcoes.js"></script>
 </head>
 <link rel="shortcut icon" type="imagex/png" href="../assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico" />
 
-<body>
+<body onload="validarSessao(), Listarcurtidas()">
     <header>
         <p>SURTR</p>
         <nav>
@@ -56,7 +57,7 @@
                     </div>
                     <div class="containerImagem">
                         <div class="div_imagemLike">
-                            <img id="imagem1" onclick="curti1()" src="../assets/like.png" style="display: block;">
+                            <img id="imagem1" onclick="curti1(1)" src="../assets/like.png" style="display: block;">
                             <img id="imagem2" onclick="descurti1()" src="../assets/deslike.png" style="display: none;">
                         </div>
                         <div class="quantidadeCurtidas">
@@ -82,7 +83,7 @@
                     </div>
                     <div class="containerImagem">
                         <div class="div_imagemLike">
-                            <img id="imagem3" onclick="curti2()" src="../assets/like.png" style="display: block;">
+                            <img id="imagem3" onclick="curti2(2)" src="../assets/like.png" style="display: block;">
                             <img id="imagem4" onclick="descurti2()" src="../assets/deslike.png" style="display: none;">
                         </div>
                         <div class="quantidadeCurtidas">
@@ -194,25 +195,86 @@
 
     const idUser = sessionStorage.ID_USUARIO;
 
+    let atualizar;
 
-    function mostrarcurtidas(idUser) {
+    window.onload = Listarcurtidas(idUser);
+
+    function Listarcurtidas(idUser) {
         fetch(`http://localhost:3333/medidas/numerocurtida/${idUser}`)
-        .then((response) => {
-            if (response > 0) {
-                response.json().then((resposta) => {
-                    const curitda = resposta.response
-                    console.log(curitda);
-                }) 
-            }
-        })   
+            .then((response) => {
+                response.json()
+                    .then((resposta) => {
+                    console.log(resposta.response);
+                    if (resposta.response.length > 0) {
+                        const curtida = resposta.response
+                        console.log(curtida);
+
+                        let mods = [];
+
+                        for(let i=0; i < curtida.length; i++){
+
+                            mods.push(curtida[i].fk_mods)
+
+                        }
+
+                        console.log(mods);
+
+                        for(let i=0; i < mods.length; i++){
+                            switch(mods[i]){
+                                case 1: {
+                                    imagem1.style.display = "none"
+                                    imagem2.style.display = "block"
+                                    break;
+                                }
+                                case 2: {
+                                    imagem3.style.display = "none"
+                                    imagem4.style.display = "block"
+                                    break;
+                                }
+                                case 3: {
+                                    imagem5.style.display = "none"
+                                    imagem6.style.display = "block"
+                                    break;
+                                }
+                                case 4: {
+                                    imagem7.style.display = "none"
+                                    imagem8.style.display = "block"
+                                    break;
+                                }
+                                case 5: {
+                                    imagem9.style.display = "none"
+                                    imagem10.style.display = "block"
+                                    break;
+                                }
+                            }
+                        }
+
+
+                        // const mod1 = curtida[0].fk_mods;
+                        // console.log(mod1);
+
+                        // const mod2 = curtida[1].fk_mods;
+                        // console.log(mod2)
+
+                        // const mod3 = curtida[2].fk_mods;
+                        // console.log(mod3);
+
+                        // const mod4 = curtida[3].fk_mods;
+                        // console.log(mod4);
+
+                        // const mod5 = curtida[4].fk_mods;
+                        // console.log(mod5);
+
+                        
+                    }
+                })
+            });
     }
 
 
-    function curti1() {
-        imagem1.style.display = "none"
-        imagem2.style.display = "block"
 
-        curtiMod(1)
+    function curti1(idMod) {
+        idUser
     }
 
     function descurti1() {
@@ -220,10 +282,9 @@
         imagem2.style.display = "none"
     }
 
-    function curti2() {
-        imagem3.style.display = "none"
-        imagem4.style.display = "block"
-        curtiMod(2)
+    function curti2(idUser, idMod) {
+        console.log(idUser);
+        console.log(idMod);
     }
 
     function descurti2() {
@@ -262,8 +323,8 @@
     }
 
 
-    function curtiMod(id) {
-        alert(id)
-    }
+    // function curtiMod(id) {
+    //     alert(id)
+    // }
 
 </script>
