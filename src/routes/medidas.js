@@ -13,6 +13,6 @@ router.get("/tempo-real/:idAquario", function (req, res) {
 
 router.get("/numerocurtida/:idUser", medidaController.BuscarNumeroCurtida);
 
-router.get("/curtimod/:idUser", medidaController.InserirDados);
+router.get("/curtimod/:idUser/:idMod", medidaController.InserirDados);
 
 module.exports = router;

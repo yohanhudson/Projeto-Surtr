@@ -59,7 +59,8 @@ function BuscarNumeroCurtida(req, res){
 
   function InserirDados(req, res){
       const idUser = req.params.idUser;
-      medidaModel.InserirDados(idUser).then((response) => {
+      const idMod = req.params.idMod;
+      medidaModel.InserirDados(idUser, idMod).then((response) => {
           res.json({response})
   }).catch((erro) => {
       console.log(erro);

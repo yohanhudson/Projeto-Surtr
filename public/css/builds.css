@@ -167,7 +167,10 @@ p {
     font-size: 25px;
     font-family: Ring;
 }
-
+.div_atributo a{
+    cursor: pointer;
+    user-select: none;
+}
 .div_button button{
     font-family: Ring;
     border: 0;

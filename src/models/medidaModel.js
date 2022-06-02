@@ -58,10 +58,14 @@ function BuscarNumeroCurtida(idUser){
     return database.executar(query);
 }
 
-function InserirDados(idUser, idMod,){
-    const query = `insert into Curtida (fk_usuario, fk_mods, Curtidas) values (${idUser}, ${idMod}, 1)`
+function InserirDados(idUser, idMod){
+    const query = `INSERT INTO Curtida (fk_usuario, fk_mods, Curtidas) VALUES (${idUser}, ${idMod}, 1)`
 
     return database.executar(query)
+}
+
+function DeletarDados(idUser, idMod){
+    const query = `dele`
 }
 
 
