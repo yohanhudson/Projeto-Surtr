@@ -42,41 +42,78 @@ function buscarMedidasEmTempoReal(req, res) {
 }
 
 
-function BuscarNumeroCurtida(req, res){
+function BuscarNumeroCurtida(req, res) {
     const idUser = req.params.idUser;
     medidaModel.BuscarNumeroCurtida(idUser).then((response) => {
-      res.json({response})
+        res.json({ response })
     }).catch((erro) => {
-      console.log(erro);
+        console.log(erro);
         console.log(
-          "Houve um erro ao buscar numero de Curtidas do mods",
-          erro.sqlMessage
+            "Houve um erro ao buscar numero de Curtidas do mods",
+            erro.sqlMessage
         );
         res.status(500).json(erro.sqlMessage);
     })
-  }
-
-
-  function InserirDados(req, res){
-      const idUser = req.params.idUser;
-      const idMod = req.params.idMod;
-      medidaModel.InserirDados(idUser, idMod).then((response) => {
-          res.json({response})
-  }).catch((erro) => {
-      console.log(erro);
-      console.log(
-          "Houve um erro ao Inserir a Curtida do usuario",
-          erro.sqlMessage
-      );
-      res.status(500).json(erro.sqlMessage);
-  })
 }
+
+
+function InserirDados(req, res) {
+    const idUser = req.params.idUser;
+    const idMod = req.params.idMod;
+    medidaModel.InserirDados(idUser, idMod).then((response) => {
+        res.json({response})
+    }).catch((erro) => {
+        console.log(erro);
+        console.log("Houve um erro ao Inserir a Curtida do usuario", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    })
+}
+
+
+function ApagarDados(req, res) {
+    const idUser = req.params.idUser;
+    const idMod = req.params.idMod;
+
+    medidaModel.ApagarDados(idUser, idMod).then((response) => {
+        res.json({response})
+    }).catch((erro) => {
+        console.log(erro);
+        console.çog("Houve um erro ao Deletar a Curtida do usuario");
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+// function QuantidadeCurtida(req, res) {
+//     const idMod = req.params.idMod;
+//     medidaModel.QuantidadeCurtida(idMod).then((response) => {
+//         res.json({response})
+//     }).cath((erro) => {
+//         console.log(erro);
+//         console.çog("Houve um erro ao tentar achar quantidade de curtida");
+//         res.status(500).json(erro.sqlMessage);
+//     })
+// }
+
+
+// function TotalCurtidaGrafico(req, res){
+//     medidaModel.TotalCurtidaGrafico(idMod).then((response) => {
+//         res.json({response})
+//     }).cath((erro) => {
+//         console.log(erro);
+//         console.çog("Houve um erro ao tentar achar ods dados de curtida");
+//         res.status(500).json(erro.sqlMessage);
+//     })
+// }
 
 
 
 module.exports = {
+    ApagarDados,
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
     BuscarNumeroCurtida,
     InserirDados,
+    ApagarDados,
+    QuantidadeCurtida,
+    TotalCurtidaGrafico
 }

@@ -59,14 +59,28 @@ function BuscarNumeroCurtida(idUser){
 }
 
 function InserirDados(idUser, idMod){
-    const query = `INSERT INTO Curtida (fk_usuario, fk_mods, Curtidas) VALUES (${idUser}, ${idMod}, 1)`
+    const query = `insert into Curtida (fk_usuario, fk_mods, Curtidas) values (${idUser}, ${idMod}, 1)`
 
     return database.executar(query)
 }
 
-function DeletarDados(idUser, idMod){
-    const query = `dele`
+function ApagarDados(idUser, idMod){
+    const query = `delete from Curtida where fk_usuario = ${idUser} and fk_mods = ${idMod}`
+
+    return database.executar(query)
 }
+
+// function QuantidadeCurtida(idMod){
+//     const query = `select sum(Curtidas) as Quantidade from Curtida where fk_mods = ${idMod}`
+
+//     return database.executar(query)
+// }
+
+// function TotalCurtidaGrafico(){
+//     const query = `select mods.nome as nome, count(Curtida.fk_mods) as quantidade from Curtida join mods on mods.id = Curtida.fk_mods group by mods.nome`
+
+//     return database.executar(query)
+// }
 
 
 module.exports = {
@@ -74,4 +88,7 @@ module.exports = {
     buscarMedidasEmTempoReal,
     BuscarNumeroCurtida,
     InserirDados,
+    ApagarDados,
+    QuantidadeCurtida,
+    TotalCurtidaGrafico
 }
