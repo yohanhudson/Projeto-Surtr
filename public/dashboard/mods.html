@@ -172,7 +172,8 @@
                     <div class="containerImagem">
                         <div class="div_imagemLike">
                             <img id="imagem9" onclick="curti(5)" src="../assets/like.png" style="display: block;">
-                            <img id="imagem10" onclick="descurtir(5)" src="../assets/deslike.png" style="display: none;">
+                            <img id="imagem10" onclick="descurtir(5)" src="../assets/deslike.png"
+                                style="display: none;">
                         </div>
                         <div class="quantidadeCurtidas">
                             <p id="qtdCurtidas">100</p>
@@ -248,24 +249,6 @@
                                     }
                                 }
                             }
-
-
-                            // const mod1 = curtida[0].fk_mods;
-                            // console.log(mod1);
-
-                            // const mod2 = curtida[1].fk_mods;
-                            // console.log(mod2)
-
-                            // const mod3 = curtida[2].fk_mods;
-                            // console.log(mod3);
-
-                            // const mod4 = curtida[3].fk_mods;
-                            // console.log(mod4);
-
-                            // const mod5 = curtida[4].fk_mods;
-                            // console.log(mod5);
-
-
                         }
                     })
             });
@@ -274,24 +257,43 @@
 
 
     function curti(idMod) {
-        fetch(`http://localhost:3333/medidas/curtimod/${idUser}`)
+        fetch(`http://localhost:3333/medidas/curtimod/${idUser}/${idMod}`)
             .then((response) => {
                 response.json()
                     .then((resposta) => {
                         console.log(`curtido com sucesso o mod ${idMod}`);
                         console.log(resposta.response);
                     })
-                });
-            }
+            });
+        setTimeout(() => Listarcurtidas(idUser))
+    }
 
     function descurtir(idMod) {
-        fetch(`http://localhost:3333/medidas/Descurtimod/${idUser}`)
+        fetch(`http://localhost:3333/medidas/descurtimod/${idUser}/${idMod}`)
             .then((response) => {
                 response.json()
                     .then((resposta) => {
-                        console.log(`curtido com sucesso o mod ${idMod}`);
+                        console.log(`descurtido com sucesso o mod ${idMod}`);
                         console.log(resposta.response);
                     })
-                });
+            });
+        setTimeout(() => Listarcurtidas(idUser))
+    }
+
+    function TotalCurtida(idMod) {
+        fetch(`http://localhost:3333/medidas/descurtimod/${idMod}`)
+            .then((response) => {
+                response.json()
+                    .then((resposta) => {
+                        console.log(`descurtido com sucesso o mod ${idMod}`);
+                        console.log(resposta.response);
+                    })
+            });
+    }
+
+
+    function mod1(){
+        TotalCurtida()
+        
     }
 </script>
