@@ -119,12 +119,12 @@ CREATE TABLE Curtida (
 );
 
 insert into Curtida values (1, 1, 1),
-(4, 1, 1),
-(2, 1, 1),
-(3, 1, 1),
-(5, 1, 1);
+(1, 2, 1),
+(1, 3, 1),
+(1, 4, 1),
+(1, 5, 1);
 
-INSERT INTO Curtida VALUES (1, 2, 1),
+INSERT INTO Curtida VALUES (5, 3, 1),
 (4, 2, 1),
 (2, 2, 1),
 (3, 2, 1),

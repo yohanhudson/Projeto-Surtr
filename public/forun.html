@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surtr-Forun</title>
     <link rel="stylesheet" href="./dashboard/forun.css">
-    <script src="script.js"></script>
+    <script src="js/funcoes.js"></script>
 </head>
 <link rel="shortcut icon" type="imagex/png" href="../assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico">
 
-<body>
+<body onload="atualizarFeed()">
     <header>
         <p>SURTR</p>
         <nav>
@@ -29,28 +29,6 @@
 
         <div class="avisos">
             <div class="container">
-                <h1>Publicar um Comentario</h1>
-                <div class="div-form">
-                    <form id="form_postagem" method="post" onsubmit="return publicar()">
-                        <div class="container_usuario">
-                            <div class="div_imagem">
-                            <img class="imagem" src="" alt="">
-                            </div>
-                            <label id="Nome_usuario">
-                                <br>
-                            </label> teste_nome do Nome_usuario
-                            <label>
-                        </div>
-                        Descrição (máximo de 250 caracteres):
-                        <br>
-                        <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                        </label>
-                        <br>
-                        <div class="div_btn">
-                            <button>Enviar</button>
-                        </div>
-                    </form>
-                </div>
                 <h1>Comentarios</h1>
                 <div class="div-results">
                     <div id="feed_container" class="feed-container">
@@ -62,44 +40,84 @@
 
 </html>
 <script>
-    let proximaAtualizacao;
+    
+  function atualizarFeed() {
+      //aguardar();
+      fetch("/avisos/listar").then(function (resposta) {
 
-window.onload = obterDadosGrafico(1);
+          
 
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-//verificar_autenticacao();
+          if (resposta.ok) {
+              if (resposta.status == 204) {
+                  var feed = document.getElementById("feed_container");
+                  var mensagem = document.createElement("span");
+                  mensagem.innerHTML = "Nenhum resultado encontrado."
+                  feed.appendChild(mensagem);
+                  throw "Nenhum resultado encontrado!!";
+              }
 
-// altere aqui como os dados serão exibidos
-// e como são recuperados do BackEnd
-function obterDadosGrafico(idAquario) {
-  if (proximaAtualizacao != undefined) {
-    clearTimeout(proximaAtualizacao);
+              resposta.json().then(function (resposta) {
+                  console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                  var feed = document.getElementById("feed_container");
+                  feed.innerHTML = "";
+                  for (let i = 0; i < resposta.length; i++) {
+                      var publicacao = resposta[i];
+
+                      // criando e manipulando elementos do HTML via JavaScript
+                      var divPublicacao = document.createElement("div");
+                      var spanID = document.createElement("span");
+                      var spanTitulo = document.createElement("span");
+                      var spanNome = document.createElement("span");
+                      var divDescricao = document.createElement("div");
+                      var divButtons = document.createElement("div");
+                     
+
+
+                      spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
+                      spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+                      divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                  
+
+                      divPublicacao.className = "publicacao";
+                      spanNome.className = "publicacao-nome";
+                      spanTitulo.className = "publicacao-titulo";
+                      divDescricao.className = "publicacao-descricao";
+
+                      divButtons.className = "div-buttons"
+
+                      divPublicacao.appendChild(spanNome);
+                      divPublicacao.appendChild(spanTitulo);
+                      divPublicacao.appendChild(divDescricao);
+                   
+                      feed.appendChild(divPublicacao);
+                  }
+
+                  // finalizarAguardar();
+              });
+          } else {
+              throw ('Houve um erro na API!');
+          }
+      }).catch(function (resposta) {
+          console.error(resposta);
+          // finalizarAguardar();
+      });
   }
 
-  fetch(`/medidas/ultimas/${idAquario}`, { cache: "no-store" })
-    .then(function (response) {
-      if (response.ok) {
-        response.json().then(function (resposta) {
-          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-          resposta.reverse();
+  function testar() {
+      // aguardar();
 
-          plotarGrafico(resposta, idAquario);
-        });
-      } else {
-        console.error("Nenhum dado encontrado ou erro na API");
-      }
-    })
-    .catch(function (error) {
-      console.error(
-        `Erro na obtenção dos dados p/ gráfico: ${error.message}`
-      );
-    });
-}
-  function sair() {
-    aguardar();
-    sessionStorage.clear();
-    finalizarAguardar();
-    window.location = "../index.html";
-}
+      var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
+
+      var divResultado = document.getElementById("div_feed");
+
+      divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
+      divResultado.innerHTML = formulario.get("descricao");
+
+      // finalizarAguardar();
+
+      return false;
+  }
+
 </script>

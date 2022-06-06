@@ -55,9 +55,9 @@ function fecharModal() {
     divModal.style.display = "none";
 }
 function sair() {
-    aguardar();
+    // aguardar();
     sessionStorage.clear();
-    finalizarAguardar();
+    // finalizarAguardar();
     window.location = "../index.html";
 }
 

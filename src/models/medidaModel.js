@@ -70,18 +70,23 @@ function ApagarDados(idUser, idMod){
     return database.executar(query)
 }
 
-// function QuantidadeCurtida(idMod){
-//     const query = `select sum(Curtidas) as Quantidade from Curtida where fk_mods = ${idMod}`
+function QuantidadeCurtida(){
+    const query = `select fk_mods as id ,sum(Curtidas) as TotalCurtido from Curtida group by fk_mods`
 
-//     return database.executar(query)
-// }
+    return database.executar(query)
+}
 
-// function TotalCurtidaGrafico(){
-//     const query = `select mods.nome as nome, count(Curtida.fk_mods) as quantidade from Curtida join mods on mods.id = Curtida.fk_mods group by mods.nome`
+function TotalCurtidaGrafico(){
+    const query = `select mods.nome as nome, count(Curtida.fk_mods) as quantidade from Curtida join mods on mods.id = Curtida.fk_mods group by mods.nome`
 
-//     return database.executar(query)
-// }
+    return database.executar(query)
+}
 
+function AtualizarGratico(){
+    const query = `select mods.nome as nome, count(Curtida.fk_mods) as quantidade from Curtida join mods on mods.id = Curtida.fk_mods group by mods.nome`
+
+    return database.executar(query)
+}
 
 module.exports = {
     buscarUltimasMedidas,
@@ -90,5 +95,6 @@ module.exports = {
     InserirDados,
     ApagarDados,
     QuantidadeCurtida,
-    TotalCurtidaGrafico
+    TotalCurtidaGrafico,
+    AtualizarGratico,
 }

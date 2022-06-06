@@ -17,8 +17,10 @@ router.get("/curtimod/:idUser/:idMod", medidaController.InserirDados);
 
 router.get("/descurtimod/:idUser/:idMod", medidaController.ApagarDados);
 
-// router.get("/quantidadecurtida/:idMod", medidaController.QuantidadeCurtida);
+router.get("/quantidadecurtida", medidaController.QuantidadeCurtida);
 
-// router.get("/totalcurtidagrafico", medidaController.TotalCurtidaGrafico);
+router.get("/totalcurtidagrafico", medidaController.TotalCurtidaGrafico);
+
+router.get("/atualizarcurtidagrafico", medidaController.AtualizarGratico);
 
 module.exports = router;

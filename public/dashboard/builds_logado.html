@@ -20,11 +20,11 @@
         <li><a href="./sobre_logado.html">Sobre</a></li>
         <li><a class="now" href="./builds_logado.html">Builds</a></li>
         <li><a href="./forun_logado.html">Fórum</a></li>
-        <li><a href="#mods">Mods</a></li>
+        <li><a href="./mods.html">Mods</a></li>
         <li><a href="./logado.html">dashboard</a></li>
         <a href="">|</a>
         <div><span class="nome_usuario" id="b_usuario">seu nome</span></div>
-        <li><a href="../index.html" onclick="sair()">Sair</a></li>
+        <li><a href="" onclick="sair()">Sair</a></li>
       </ul>
     </nav>
   </header>
@@ -39,42 +39,44 @@
           <h1>Aumentar de Nivel</h1>
           <div class="teste">
             <div class="div_titulo">
-              <p>Nivel</p>
+              <p>Pontos Atributos</p>
             </div>
             <input id="ipt_nivelmax" min="1" max="713" type="number">
           </div>
           <h1>Pontos de atributo</h1>
           <div class="div_pontos">
             <div class="div_atributo">
-              <p>Vitalidade</p><a onclick="">-</a>
-              <span id="span_vitalidade">10</span><a onclick= "aumentar('span_vitalidade', span_vitalidade.innerHTML)">+</a>
+              <p>Vitalidade</p><a onclick="diminuir('span_vitalidade', span_vitalidade.innerHTML)">-</a>
+              <span id="span_vitalidade">10</span><a
+                onclick="aumentar('span_vitalidade', span_vitalidade.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
-              <p>Mente</p><a onclick="">-</a>
+              <p>Mente</p><a onclick="diminuir('span_mente', span_mente.innerHTML)">-</a>
               <span id="span_mente">10</span><a onclick="aumentar('span_mente', span_mente.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
-              <p>Fortitude</p><a onclick="">-</a>
+              <p>Fortitude</p><a onclick="diminuir('span_fortitude', span_fortitude.innerHTML)">-</a>
               <span id="span_fortitude">10</span><a onclick="aumentar('span_fortitude', span_fortitude.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
-              <p>Força</p><a onclick="">-</a>
+              <p>Força</p><a onclick="diminuir('span_força', span_força.innerHTML)">-</a>
               <span id="span_força">10</span><a onclick="aumentar('span_força', span_força.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
-              <p>Destreza</p><a onclick="">-</a>
+              <p>Destreza</p><a onclick="diminuir('span_destreza', span_destreza.innerHTML)">-</a>
               <span id="span_destreza">10</span><a onclick="aumentar('span_destreza', span_destreza.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
-              <p>Inteligência</p><a onclick="">-</a>
-              <span id="span_inteligencia">10</span><a onclick="aumentar('span_inteligencia', span_inteligencia.innerHTML)">+</a>
+              <p>Inteligência</p><a onclick="diminuir('span_inteligencia', span_inteligencia.innerHTML)">-</a>
+              <span id="span_inteligencia">10</span><a
+                onclick="aumentar('span_inteligencia', span_inteligencia.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
-              <p>Fé</p><a onclick="">-</a>
+              <p>Fé</p><a onclick="diminuir('span_fe', span_fe.innerHTML)">-</a>
               <span id="span_fe">10</span><a onclick="aumentar('span_fe', span_fe.innerHTML)">+</a>
             </div>
             <div class="div_atributo">
-              <p>Arcano</p><a onclick="">-</a>
+              <p>Arcano</p><a onclick="diminuir('span_arcano', span_arcano.innerHTML)">-</a>
               <span id="span_arcano">10</span><a onclick="aumentar('span_arcano', span_arcano.innerHTML)">+</a>
             </div>
             <div class="div_button">
@@ -84,7 +86,7 @@
         </div>
 
         <div class="imagem">
-          <img src="../assets/images.jpg" alt="classe_personagem">
+          <img id="ClassPesonagem" src="">
         </div>
       </div>
     </div>
@@ -129,31 +131,87 @@
     </div>
   </div>
 </body>
+
 </html>
 <script>
 
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+  let NvTotal = ""
 
   function aumentar(id_atributo, numero) {
-    let teste = Number(numero);
-     teste++;
-     var tag = document.getElementById(id_atributo)
-     tag.innerHTML = teste
+    NvTotal = ipt_nivelmax.value;
+
+    if (NvTotal <= 0) {
+      alert(`Voce não tem mais Pontos de Atributo`)
+    } else if (NvTotal > 713) {
+      alert(`O level max é 713`)
+    } else if (numero > 98) {
+      alert(`Atributo pode ir no maximo ate 99`)
+    }
+    else {
+      let Nivel = Number(numero);
+      Nivel++
+      NvTotal--
+      var tag = document.getElementById(id_atributo)
+      tag.innerHTML = Nivel
+      document.getElementById(`ipt_nivelmax`).value = NvTotal
+
+    }
+  }
+
+  function diminuir(id_atributo, numero) {
+    NvTotal = ipt_nivelmax.value;
+    if (NvTotal > 713) {
+      alert(`O level max é 713, parabens voce chegou ao limite`)
+    } else if (numero < 11) {
+      alert(`Atributo não pode ser menor que 10`)
+    }
+    else {
+      let Nivel = Number(numero);
+      Nivel--;
+      NvTotal++
+      var tag = document.getElementById(id_atributo)
+      tag.innerHTML = Nivel
+      document.getElementById(`ipt_nivelmax`).value = NvTotal
+    }
   }
 
 
-  function diminuir(atributo) {
+  function confirmar() {
+    NvTotal
+    if (ipt_nivelmax.value == "") {
+      alert(`Voce não declarou o numero de pontos`)
+    } else {
+
+
+      if (span_mente.innerHTML >= span_inteligencia.innerHTML && span_mente.innerHTML > span_fe.innerHTML && span_mente.innerHTML > span_arcano.innerHTML && span_mente.innerHTML > span_força.innerHTML && span_mente.innerHTML > span_destreza.innerHTML) {
+        ClassPesonagem.src = `../assets/astrologer.jpg`
+      } else if (span_destreza.innerHTML > span_força.innerHTML && span_destreza.innerHTML > span_mente.innerHTML && span_destreza.innerHTML > span_inteligencia.innerHTML && span_destreza.innerHTML > span_arcano.innerHTML && span_destreza.innerHTML > span_fe.innerHTML) {
+        ClassPesonagem.src = `../assets/bandit.jpg`
+      } else if (span_força.innerHTML > span_destreza.innerHTML && span_força.innerHTML > span_mente.innerHTML && span_força.innerHTML > span_inteligencia.innerHTML && span_força.innerHTML > span_fe.innerHTML && span_força.innerHTML >= span_arcano.innerHTML) {
+        ClassPesonagem.src = `../assets/vagabond.jpg`
+      } else if (span_fe.innerHTML > span_força.innerHTML && span_fe.innerHTML > span_destreza.innerHTML && span_fe.innerHTMLL > span_mente.innerHTML && span_inteligencia.innerHTML < span_fe.innerHTML && span_fe.innerHTML > span_arcano.innerHTML) {
+        ClassPesonagem.src = `../assets/prophet.jpg`
+      } else if (span_arcano.innerHTML >= span_força.innerHTML && span_arcano.innerHTML >= span_destreza.innerHTML && span_arcano.innerHTML > span_mente.innerHTML && span_arcano.innerHTML > span_fe.innerHTML && span_inteligencia.innerHTML < span_arcano.innerHTML) {
+        ClassPesonagem.src = `../assets/prisoner.jpg`
+      } else if (span_arcano.innerHTML < span_força.innerHTML && span_força.innerHTML == span_destreza.innerHTML && span_força.innerHTML > span_mente.innerHTML && span_força.innerHTML > span_fe.innerHTML && span_força.innerHTML < span_inteligencia && span_força.innerHTML == span_fortitude.innerHTML) {
+        ClassPesonagem.src = `../assets/warrior.jpg`
+      } else if (span_destreza.innerHTML == span_força.innerHTML && span_destreza.innerHTML > span_mente.innerHTML && span_destreza.innerHTML > span_fe.innerHTML && span_destreza.innerHTML > span_arcano.innerHTML) {
+        ClassPesonagem.src = `../assets/samurai.jpg`
+      } else if (span_fortitude.innerHTML >= span_força.innerHTML && span_fortitude.innerHTML >= span_destreza.innerHTML && span_fortitude.innerHTML > span_mente.innerHTML && span_fortitude.innerHTML > span_fe.innerHTML && span_inteligencia.innerHTML < span_fortitude.innerHTML && span_fortitude.innerHTML > span_arcano.innerHTML) {
+        ClassPesonagem.src = `../assets/hero.jpg`
+      } else if (span_arcano.innerHTML == span_força.innerHTML && span_arcano.innerHTML == span_destreza.innerHTML && span_arcano.innerHTML == span_mente.innerHTML && span_arcano.innerHTML == span_fe.innerHTML && span_fe.innerHTML == span_arcano.innerHTML) {
+        ClassPesonagem.src = `../assets/whetch.jpg`
+      } else if (span_fe.innerHTML == span_força.innerHTML && span_fe.innerHTML > span_destreza.innerHTML && span_fe.innerHTML > span_mente.innerHTML && span_fe.innerHTML > span_arcano.innerHTML && span_fe.innerHTML > span_inteligencia.innerHTML) {
+        ClassPesonagem.src = `../assets/cofessor.jpg`
+      }
+
+      ipt_nivelmax.value = ""
+    }
 
   }
 
-  // function confirmar(){
-  //   if(Mente == Fe || ){
-    
-  //   }
-  // }
-
-  var imagem = []
-  var runas1 = []
   function Boss() {
 
     var select = Number(slc_boss.value);
@@ -162,44 +220,71 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     imagem = ["../assets/boss1.jpg", "../assets/boss2.jpeg", "../assets/boss3.jpg", "../assets/boss4.jpg", "../assets/bossteste.jpg", "../assets/boss6.jpg", "../assets/boss7.jpg", "../assets/boss8.jpg", "../assets/boss9.jpg", "../assets/boss10.jpg", "../assets/boss11.jpg", "../assets/boss12.jpg", "../assets/boss13.jpg"]
 
-    runas1 = ["12,000", "60,000", "66,000", "67,000", "72,000", "73,000", "75,000", "76,000"]
-    armas1 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss1 = {
+      "runas1": ["12,000", "60,000", "66,000", "67,000", "72,000", "73,000", "75,000", "76,000"],
+      "armas1": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas2 = ["20,000", "80,000", "88,000", "90,000", "96,000", "98,000", "100,000", "102,000"]
-    armas2 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss2 = {
+      "runas2": ["20,000", "80,000", "88,000", "90,000", "96,000", "98,000", "100,000", "102,000"],
+      "armas2": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas3 = ["14,000", "42,000", "61,600", "61,600", "61,600", "61,600", "61,600", "61,600"]
-    armas3 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss3 = {
+      "runas3": ["14,000", "42,000", "61,600", "61,600", "61,600", "61,600", "61,600", "61,600"],
+      "armas3": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas4 = ["40,000", "120,000", "132,000", "132,000", "132,000", "132,000", "132,000", "132,000"]
-    armas4 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss4 = {
+      "runas4": ["40,000", "120,000", "132,000", "132,000", "132,000", "132,000", "132,000", "132,000"],
+      "armas4": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas5 = ["150,000", "350,000", "450,000", "450,000", "450,000", "450,000", "450,000", "450,000"]
-    armas5 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss5 = {
+      "runas5": ["150,000", "350,000", "450,000", "450,000", "450,000", "450,000", "450,000", "450,000"],
+      "armas5": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas6 = ["400,000", "450,000", "500,000", "500,000", "500,000", "500,000", "500,000", "500,000"]
-    armas6 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss6 = {
+      "runas6": ["400,000", "450,000", "500,000", "500,000", "500,000", "500,000", "500,000", "500,000"],
+      "armas6": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas7 = ["180,000", "360,000", "396,000", "450,000", "450,000", "450,000", "450,000", "450,000"]
-    armas7 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
 
-    runas8 = ["170,000", "340,000", "374,000", "374,000", "374,000", "374,000", "374,000", "374,000"]
-    armas8 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss7 = {
+      "runas7": ["180,000", "360,000", "396,000", "450,000", "450,000", "450,000", "450,000", "450,000"],
+      "armas7": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas9 = ["220,000", "440,000", "484,000", "484,000", "484,000", "484,000", "484,000", "484,000"]
-    armas9 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss8 = {
+      "runas8": ["170,000", "340,000", "374,000", "374,000", "374,000", "374,000", "374,000", "374,000"],
+      "armas8": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas10 = ["150,000", "300,000", "330,000", "330,000", "330,000", "330,000", "330,000", "330,000"]
-    armas10 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss9 = {
+      "runas9": ["220,000", "440,000", "484,000", "484,000", "484,000", "484,000", "484,000", "484,000"],
+      "armas9": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas11 = ["300,000", "450,000", "660,000", "660,000", "660,000", "660,000", "660,000", "660,000"]
-    armas11 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss10 = {
+      "runas10": ["150,000", "300,000", "330,000", "330,000", "330,000", "330,000", "330,000", "330,000"],
+      "armas10": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas12 = ["600,000", "700,000", "750,000", "750,000", "750,000", "750,000", "750,000", "750,000"]
-    armas12 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss11 = {
+      "runas11": ["300,000", "450,000", "660,000", "660,000", "660,000", "660,000", "660,000", "660,000"],
+      "armas11": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
-    runas13 = ["700,000", "750,000", "900,000", "900,000", "900,000", "900,000", "900,000", "900,000"]
-    armas13 = ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    const Boss12 = {
+      "runas12": ["600,000", "700,000", "750,000", "750,000", "750,000", "750,000", "750,000", "750,000"],
+      "armas12": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
+
+    const Boss13 = {
+      "runas13": ["700,000", "750,000", "900,000", "900,000", "900,000", "900,000", "900,000", "900,000"],
+      "armas13": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+    }
 
     mostrar1.innerHTML = ""
 
@@ -208,161 +293,158 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
       imagemBoss.src = `${imagem[0]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Margit, the Fell Omen dropa ${runas1[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Margit, the Fell Omen dropa ${Boss1.runas1[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 1; contador2 <= 8; contador2++) {
-        mostrar1.innerHTML += `A top ${contador2} melhor arma é a ${armas1[contador2 - 1]}<br/><br/>`
+        mostrar1.innerHTML += `A top ${contador2} melhor arma é a ${Boss1.armas1[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 2) {
+    } else if (select == 2) {
       imagemBoss.src = `${imagem[1]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Godrick the Grafted dropa ${runas2[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Godrick the Grafted dropa ${Boss2.runas2[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas2[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss2.armas2[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 3) {
+    } else if (select == 3) {
       imagemBoss.src = `${imagem[2]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Red Wolf of Radagon dropa ${runas3[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Red Wolf of Radagon dropa ${Boss3.runas3[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas3[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss3.armas3[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 4) {
+    } else if (select == 4) {
       imagemBoss.src = `${imagem[3]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Rennala, Queen of the Full Moon dropa ${runas4[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Rennala, Queen of the Full Moon dropa ${Boss4.runas4[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas4[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss4.armas4[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 5) {
+    } else if (select == 5) {
       imagemBoss.src = `${imagem[4]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Godfrey, First Elden Lord dropa ${runas5[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Godfrey, First Elden Lord dropa ${Boss5.runas5[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 1; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas5[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss5.armas5[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 6) {
+    } else if (select == 6) {
       imagemBoss.src = `${imagem[5]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Morgott, the Omen King dropa ${runas6[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Morgott, the Omen King dropa ${Boss6.runas6[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 1; contador2 <= 8; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas6[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss6.armas6[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 7) {
+    } else if (select == 7) {
       imagemBoss.src = `${imagem[6]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Fire Giant dropa ${runas7[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Fire Giant dropa ${Boss7.runas7[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas7[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss7.armas7[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 8) {
+    } else if (select == 8) {
       imagemBoss.src = `${imagem[7]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Godskin Duo dropa ${runas8[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Godskin Duo dropa ${Boss8.runas8[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas8[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss8.armas8[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 9) {
+    } else if (select == 9) {
       imagemBoss.src = `${imagem[8]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Maliketh, the Black Blade dropa ${runas9[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Maliketh, the Black Blade dropa ${Boss9.runas9[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas9[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss9.armas9[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 10) {
+    } else if (select == 10) {
       imagemBoss.src = `${imagem[9]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Sir Gideon Ofnir, the All-Knowing dropa ${runas10[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Sir Gideon Ofnir, the All-Knowing dropa ${Boss10.runas10[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas10[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss10.armas10[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 11) {
+    } else if (select == 11) {
       imagemBoss.src = `${imagem[10]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Hoarah Loux dropa ${runas11[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Hoarah Loux dropa ${Boss11.runas11[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas11[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss11.armas11[contador2 - 1]}<br/><br/>`
       }
 
-    }else if (select == 12) {
+    } else if (select == 12) {
       imagemBoss.src = `${imagem[11]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Radagon of the Golden Order dropa ${runas12[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Radagon of the Golden Order dropa ${Boss12.runas12[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas12[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss12.armas12[contador2 - 1]}<br/><br/>`
       }
 
-    }else {
+    } else {
       imagemBoss.src = `${imagem[12]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
-        mostrar1.innerHTML += `Na jornada ${contador} o boss Elden Beast dropa ${runas13[contador]} runas <br/><br/>`
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Elden Beast dropa ${Boss13.runas13[contador]} runas <br/><br/>`
         contador++
       }
 
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${armas13[contador2 - 1]}<br/><br/>`
+        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss13.armas13[contador2 - 1]}<br/><br/>`
       }
 
     }
   }
 </script>
-</body>
-
-</html>
