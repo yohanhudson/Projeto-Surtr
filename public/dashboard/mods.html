@@ -11,7 +11,7 @@
 </head>
 <link rel="shortcut icon" type="imagex/png" href="../assets/deenbeg-3775233d-3451-4574-985a-39fca6594936-_1_.ico" />
 
-<body onload="validarSessao(), Listarcurtidas()">
+<body onload="validarSessao(), Listarcurtidas(), TotalCurtida()">
     <header>
         <p>SURTR</p>
         <nav>
@@ -24,7 +24,7 @@
                 <li><a href="./logado.html">dashboard</a></li>
                 <a href="">|</a>
                 <div><span class="nome_usuario" id="b_usuario">seu nome</span></div>
-                <li><a href="../index.html" onclick="sair()">Sair</a></li>
+                <li><a href="" onclick="sair()">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -61,7 +61,7 @@
                             <img id="imagem2" onclick="descurtir(1)" src="../assets/deslike.png" style="display: none;">
                         </div>
                         <div class="quantidadeCurtidas">
-                            <p id="qtdCurtidas">100</p>
+                            <p id="qtdCurtidasMod1">0</p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                             <img id="imagem4" onclick="descurtir(2)" src="../assets/deslike.png" style="display: none;">
                         </div>
                         <div class="quantidadeCurtidas">
-                            <p id="qtdCurtidas">100</p>
+                            <p id="qtdCurtidasMod2">0</p>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                             <img id="imagem6" onclick="descurtir(3)" src="../assets/deslike.png" style="display: none;">
                         </div>
                         <div class="quantidadeCurtidas">
-                            <p id="qtdCurtidas">100</p>
+                            <p id="qtdCurtidasMod3">0</p>
                         </div>
                     </div>
                 </div>
@@ -143,10 +143,10 @@
                     <div class="containerImagem">
                         <div class="div_imagemLike">
                             <img id="imagem7" onclick="curti(4)" src="../assets/like.png" style="display: block;">
-                            <img id="imagem8" onclick="descurti(4)" src="../assets/deslike.png" style="display: none;">
+                            <img id="imagem8" onclick="descurtir(4)" src="../assets/deslike.png" style="display: none;">
                         </div>
                         <div class="quantidadeCurtidas">
-                            <p id="qtdCurtidas">100</p>
+                            <p id="qtdCurtidasMod4">0</p>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                                 style="display: none;">
                         </div>
                         <div class="quantidadeCurtidas">
-                            <p id="qtdCurtidas">100</p>
+                            <p id="qtdCurtidasMod5">0</p>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
 </html>
 <script>
 
-    b_usuario = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     const idUser = sessionStorage.ID_USUARIO;
 
@@ -249,6 +249,7 @@
                                     }
                                 }
                             }
+                            TotalCurtida()
                         }
                     })
             });
@@ -263,9 +264,37 @@
                     .then((resposta) => {
                         console.log(`curtido com sucesso o mod ${idMod}`);
                         console.log(resposta.response);
+                        if (response.status == 200) {
+                            switch (idMod) {
+                                case 1: {
+                                    imagem1.style.display = "none"
+                                    imagem2.style.display = "block"
+                                    break;
+                                } case 2: {
+                                    imagem3.style.display = "none"
+                                    imagem4.style.display = "block"
+                                    break;
+                                } case 3: {
+                                    imagem5.style.display = "none"
+                                    imagem6.style.display = "block"
+                                    break;
+                                } case 4: {
+                                    imagem7.style.display = "none"
+                                    imagem8.style.display = "block"
+                                    break;
+                                }
+                                case 5: {
+                                    imagem9.style.display = "none"
+                                    imagem10.style.display = "block"
+                                    break;
+                                }
+                            }
+                        }
+
+                        TotalCurtida()
+
                     })
             });
-        setTimeout(() => Listarcurtidas(idUser))
     }
 
     function descurtir(idMod) {
@@ -275,25 +304,83 @@
                     .then((resposta) => {
                         console.log(`descurtido com sucesso o mod ${idMod}`);
                         console.log(resposta.response);
+                        if (response.status == 200) {
+                            switch (idMod) {
+                                case 1: {
+                                    imagem1.style.display = "block"
+                                    imagem2.style.display = "none"
+                                    break;
+                                } case 2: {
+                                    imagem3.style.display = "block"
+                                    imagem4.style.display = "none"
+                                    break;
+                                } case 3: {
+                                    imagem5.style.display = "block"
+                                    imagem6.style.display = "none"
+                                    break;
+                                } case 4: {
+                                    imagem7.style.display = "block"
+                                    imagem8.style.display = "none"
+                                    break;
+                                } case 5: {
+                                    imagem9.style.display = "block"
+                                    imagem10.style.display = "none"
+                                    break;
+                                }
+                            }
+                        }
+
+                        TotalCurtida()
+
                     })
             });
-        setTimeout(() => Listarcurtidas(idUser))
     }
 
     function TotalCurtida(idMod) {
-        fetch(`http://localhost:3333/medidas/descurtimod/${idMod}`)
+        fetch(`http://localhost:3333/medidas/quantidadecurtida`)
             .then((response) => {
                 response.json()
                     .then((resposta) => {
-                        console.log(`descurtido com sucesso o mod ${idMod}`);
+                        console.log(`Numero de curtidas chegou com sucesso`);
                         console.log(resposta.response);
+                        const qtd_curtidaTotal = resposta.response
+
+                        console.log(qtd_curtidaTotal)
+
+                        let Curtidas = []
+                        let IDMods = []
+
+                        for (i = 0; i < qtd_curtidaTotal.length; i++) {
+                            Curtidas.push(qtd_curtidaTotal[i].TotalCurtido)
+                            IDMods.push(qtd_curtidaTotal[i].id)
+                        }
+                        console.log(Curtidas)
+                        console.log(IDMods);
+
+                        for (i = 0; i < qtd_curtidaTotal.length; i++) {
+                            switch (IDMods[i]) {
+                                case 1: {
+                                    qtdCurtidasMod1.innerHTML = Curtidas[0]
+                                    break;
+                                } case 2: {
+                                    qtdCurtidasMod2.innerHTML = Curtidas[1]
+                                    break;
+                                } case 3: {
+                                    qtdCurtidasMod3.innerHTML = Curtidas[2]
+                                    break;
+                                } case 4: {
+                                    qtdCurtidasMod4.innerHTML = Curtidas[3]
+                                    break;
+                                } case 5: {
+                                    qtdCurtidasMod5.innerHTML = Curtidas[4]
+                                    break;
+                                }
+                            }
+
+                        }
+
                     })
             });
     }
 
-
-    function mod1(){
-        TotalCurtida()
-        
-    }
 </script>

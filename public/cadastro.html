@@ -84,43 +84,53 @@
     var confirmacaoSenhaVar = ipt_Confirma_Senha.value;
 
     if (nomeVar == "" || emailVar == "" || plataformaVar == "" ||senhaVar == "" || confirmacaoSenhaVar == "") {
-      cardErro.style.display = "block"
-      mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+      alert("Todos os campos estão em branco")
+     
+    }else if(nomeVar.length < 3){
+      alert("O campo nome tem que ter pelo menos 3 letras")
+   
+    }else if (nomeVar.length > 15){
+      alert("O nome so pode ter ate 15 letras")
+     
+    }else if (emailVar.indexOf("@") <= 0){
+      alert("O email não pode começar com @")
+    
+    }else if (senhaVar.length < 8){
+      alert("Senha muito curta, coloque uma senha com 8 caracteri")
 
-      finalizarAguardar();
-      return false;
+    }else if(senhaVar != confirmacaoSenhaVar){
+      alert("As senhas não são iguais")
     }
     else {
-      setInterval(sumirMensagem, 5000)
-    }
-
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        plataformaServer: plataformaVar,
-        senhaServer: senhaVar
-      })
-    }).then(function (resposta) {
-
-      console.log("resposta: ", resposta);
-
-      if (resposta.ok) {
-        //cardErro.style.display = "block";
-
-        mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+      
+      
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          plataformaServer: plataformaVar,
+          senhaServer: senhaVar
+        })
+      }).then(function (resposta) {
+        
+        console.log("resposta: ", resposta);
+        
+        if (resposta.ok) {
+          //cardErro.style.display = "block";
+          
+          mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        
         setTimeout(() => {
           window.location = "login.html";
         }, "2000")
-
+        
         //limparFormulario();
         finalizarAguardar();
       } else {
@@ -132,35 +142,36 @@
             console.log(resp);
             finalizarAguardar();
           }
-        );
-        //throw ("Houve um erro ao tentar realizar o cadastro!");
-      }
-    }).catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-      finalizarAguardar();
-    });
-
-    return false;
+          );
+          //throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+      }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+      
+      return false;
+    }
+    
   }
-
-  function sumirMensagem() {
-    // cardErro.style.display = "none"
-  }
-
-</script>
-
-<!-- else {
-  resposta.json().then(
-    function (resp) {
-      mensagem_erro.style.display = 'flex';
-      mensagem_erro.innerHTML = resp.mensagem;
-      console.log(resp);
-      finalizarAguardar();
-    } 
-  
-  essa funcao esta trazendo a informação do back end e tratando ela para ser exibido no front atraves de um json ela depende da função de validarEmail que esta no model e exibi na tela
-
-
-
-  NOTA MUDAR PRA ALERT OU MELHORAR A EXIBIÇÃO DESSA IMAGEM
-  -->
+    function sumirMensagem() {
+      // cardErro.style.display = "none"
+    }
+    
+    </script>
+    
+    <!-- else {
+      resposta.json().then(
+        function (resp) {
+          mensagem_erro.style.display = 'flex';
+          mensagem_erro.innerHTML = resp.mensagem;
+          console.log(resp);
+          finalizarAguardar();
+        } 
+        
+        essa funcao esta trazendo a informação do back end e tratando ela para ser exibido no front atraves de um json ela depende da função de validarEmail que esta no model e exibi na tela
+        
+        
+        
+        NOTA MUDAR PRA ALERT OU MELHORAR A EXIBIÇÃO DESSA IMAGEM
+        -->

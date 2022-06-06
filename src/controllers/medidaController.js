@@ -83,27 +83,38 @@ function ApagarDados(req, res) {
     });
 }
 
-// function QuantidadeCurtida(req, res) {
-//     const idMod = req.params.idMod;
-//     medidaModel.QuantidadeCurtida(idMod).then((response) => {
-//         res.json({response})
-//     }).cath((erro) => {
-//         console.log(erro);
-//         console.çog("Houve um erro ao tentar achar quantidade de curtida");
-//         res.status(500).json(erro.sqlMessage);
-//     })
-// }
+function QuantidadeCurtida(req, res) {
+    
+    medidaModel.QuantidadeCurtida().then((response) => {
+        res.json({response})
+    }).catch((erro) => {
+        console.log(erro);
+        console.çog("Houve um erro ao tentar achar quantidade de curtida");
+        res.status(500).json(erro.sqlMessage);
+    })
+}
 
 
-// function TotalCurtidaGrafico(req, res){
-//     medidaModel.TotalCurtidaGrafico(idMod).then((response) => {
-//         res.json({response})
-//     }).cath((erro) => {
-//         console.log(erro);
-//         console.çog("Houve um erro ao tentar achar ods dados de curtida");
-//         res.status(500).json(erro.sqlMessage);
-//     })
-// }
+function TotalCurtidaGrafico(req, res){
+    medidaModel.TotalCurtidaGrafico().then((response) => {
+        res.json({response})
+    }).catch((erro) => {
+        console.log(erro);
+        console.çog("Houve um erro ao tentar achar os dados de curtida");
+        res.status(500).json(erro.sqlMessage);
+    })
+}
+
+
+function AtualizarGratico(req, res){
+    medidaModel.AtualizarGratico().then((response) => {
+        res.json({response})
+    }).catch((erro) => {
+        console.log(erro);
+        console.çog("Houve um erro ao tentar achar os ultimos dados de curtidas");
+        res.status(500).json(erro.sqlMessage);
+    })
+}
 
 
 
@@ -115,5 +126,6 @@ module.exports = {
     InserirDados,
     ApagarDados,
     QuantidadeCurtida,
-    TotalCurtidaGrafico
+    TotalCurtidaGrafico,
+    AtualizarGratico,
 }
