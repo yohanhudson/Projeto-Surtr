@@ -25,7 +25,7 @@
         <li><a href="logado.html">dashboard</a></li>
         <a href="">|</a>
         <div><span class="nome_usuario" id="b_usuario">seu nome</span></div>
-        <li><a href="" onclick="sair()">Sair</a></li>
+        <li><a href="../index.html">Sair</a></li>
       </ul>
     </nav>
   </header>
@@ -59,44 +59,7 @@
 </html>
 
 <script>
-// let proximaAtualizacao;
-
-// window.onload = obterDadosGrafico(1);
 
 b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-//verificar_autenticacao();
-
-// altere aqui como os dados serão exibidos
-// e como são recuperados do BackEnd
-// function obterDadosGrafico(idAquario) {
-//   if (proximaAtualizacao != undefined) {
-//     clearTimeout(proximaAtualizacao);
-//   }
-
-//   fetch(`/medidas/ultimas/${idAquario}`, { cache: "no-store" })
-//     .then(function (response) {
-//       if (response.ok) {
-//         response.json().then(function (resposta) {
-//           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-//           resposta.reverse();
-
-//           plotarGrafico(resposta, idAquario);
-//         });
-//       } else {
-//         console.error("Nenhum dado encontrado ou erro na API");
-//       }
-//     })
-//     .catch(function (error) {
-//       console.error(
-//         `Erro na obtenção dos dados p/ gráfico: ${error.message}`
-//       );
-//     });
-// }
-//   function sair() {
-//     aguardar();
-//     sessionStorage.clear();
-//     finalizarAguardar();
-//     window.location = "../index.html";
-// }
 </script>
