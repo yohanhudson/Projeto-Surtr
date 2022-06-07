@@ -24,7 +24,7 @@
         <li><a href="./logado.html">dashboard</a></li>
         <a href="">|</a>
         <div><span class="nome_usuario" id="b_usuario">seu nome</span></div>
-        <li><a href="" onclick="sair()">Sair</a></li>
+        <li><a href="../index.html">Sair</a></li>
       </ul>
     </nav>
   </header>
@@ -91,51 +91,62 @@
       </div>
     </div>
   </div>
-  <div class="banner2">
-    <div class="container_total">
-      <div class="div_titulo">
+  <div class="bannerT">
+    <div class="banner2">
+      <div class="titulo1">
         <h1>Dados dos Boss</h1>
       </div>
-      <div class="div_global">
-        <div class="container2">
-          <div class="container3">
-            <h4>Selecione o Boss</h4>
-            <div>
-              <select id="slc_boss">
-                <option value="">--</option>
-                <option value="1">Margit, the Fell Omen</option>
-                <option value="2">Godrick the Grafted</option>
-                <option value="3">Red Wolf of Radagon</option>
-                <option value="4">Rennala, Queen of the Full Moon</option>
-                <option value="5">Godfrey, First Elden Lord</option>
-                <option value="6">Morgott, the Omen King</option>
-                <option value="7">Fire Giant</option>
-                <option value="8">Godskin Duo</option>
-                <option value="9">Maliketh, the Black Blade</option>
-                <option value="10">Sir Gideon Ofnir, the All-Knowing</option>
-                <option value="11">Hoarah Loux</option>
-                <option value="12">Radagon of the Golden Order</option>
-                <option value="13">Elden Beast</option>
-              </select>
+      <div class="container">
+        <div id="SUBTITULO" class="subtitulo">
+          <h4>Selecione o Boss</h4>
+        </div>
+        <div class="containerImagems">
+          <div id="Linha1" class="ContainerLinhaImagens">
+            <div class="imagem_Boss"><img onclick="Boss(1)" class="idImagem" src="./assets/boss1.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(2)" class="idImagem" src="./assets/boss2.jpeg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(3)" class="idImagem" src="./assets/boss3.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(4)" class="idImagem" src="./assets/boss4.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(5)" class="idImagem" src="./assets/bossteste.jpg" alt=""></div>
+          </div>
+          <div id="Linha2" class="ContainerLinhaImagens">
+            <div class="imagem_Boss"><img onclick="Boss(6)" class="idImagem" src="./assets/boss6.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(7)" class="idImagem" src="./assets/boss7.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(8)" class="idImagem" src="./assets/boss8.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(9)" class="idImagem" src="./assets/boss9.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(10)" class="idImagem" src="./assets/boss10.jpg" alt=""></div>
+          </div>
+          <div id="Linha3" class="ContainerLinhaImagens2">
+            <div class="imagem_Boss2"><img onclick="Boss(11)" class="idImagem" src="./assets/boss11.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(12)" class="idImagem" src="./assets/boss12.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(13)" class="idImagem" src="./assets/boss13.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(14)" class="idImagem" src="./assets/general.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(15)" class="idImagem" src="./assets/malenia.jpg" alt=""></div>
+          </div>
+          <div id="PagBoss" class="ContainerPerfil">
+            <div class="DivPerfilArma">
+              <div class="DivPerfil">
+                <img class="ImgBossPerfil" id="imagemBoss" src="">
+              </div>
+              <div id="Armas" class="TextoArma"></div>
             </div>
-            <div class="div_button2">
-              <button onclick="Boss()">Mostrar</button>
+            <div class="Perfil3">
+              <div id="textoDica" class="Dica"></div>
+              <div class="TextoPerfil" id="mostrar1"></div>
+            </div>
+            <div class="botao">
+              <button onclick="voltar()">Voltar</button>
             </div>
           </div>
-          <div class="imagem2">
-            <img class="img_boss" id="imagemBoss" src="" alt="">
-          </div>
-          <div class="container4" id="mostrar1"></div>
         </div>
       </div>
     </div>
+  </div>
+  </div>
   </div>
 </body>
 
 </html>
 <script>
-
-  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
   let NvTotal = ""
 
@@ -186,25 +197,27 @@
 
 
       if (span_mente.innerHTML >= span_inteligencia.innerHTML && span_mente.innerHTML > span_fe.innerHTML && span_mente.innerHTML > span_arcano.innerHTML && span_mente.innerHTML > span_força.innerHTML && span_mente.innerHTML > span_destreza.innerHTML) {
-        ClassPesonagem.src = `../assets/astrologer.jpg`
+        ClassPesonagem.src = `./assets/astrologer.jpg`
       } else if (span_destreza.innerHTML > span_força.innerHTML && span_destreza.innerHTML > span_mente.innerHTML && span_destreza.innerHTML > span_inteligencia.innerHTML && span_destreza.innerHTML > span_arcano.innerHTML && span_destreza.innerHTML > span_fe.innerHTML) {
-        ClassPesonagem.src = `../assets/bandit.jpg`
+        ClassPesonagem.src = `./assets/bandit.jpg`
       } else if (span_força.innerHTML > span_destreza.innerHTML && span_força.innerHTML > span_mente.innerHTML && span_força.innerHTML > span_inteligencia.innerHTML && span_força.innerHTML > span_fe.innerHTML && span_força.innerHTML >= span_arcano.innerHTML) {
-        ClassPesonagem.src = `../assets/vagabond.jpg`
+        ClassPesonagem.src = `./assets/vagabond.jpg`
       } else if (span_fe.innerHTML > span_força.innerHTML && span_fe.innerHTML > span_destreza.innerHTML && span_fe.innerHTMLL > span_mente.innerHTML && span_inteligencia.innerHTML < span_fe.innerHTML && span_fe.innerHTML > span_arcano.innerHTML) {
-        ClassPesonagem.src = `../assets/prophet.jpg`
+        ClassPesonagem.src = `./assets/prophet.jpg`
       } else if (span_arcano.innerHTML >= span_força.innerHTML && span_arcano.innerHTML >= span_destreza.innerHTML && span_arcano.innerHTML > span_mente.innerHTML && span_arcano.innerHTML > span_fe.innerHTML && span_inteligencia.innerHTML < span_arcano.innerHTML) {
-        ClassPesonagem.src = `../assets/prisoner.jpg`
+        ClassPesonagem.src = `./assets/prisoner.jpg`
       } else if (span_arcano.innerHTML < span_força.innerHTML && span_força.innerHTML == span_destreza.innerHTML && span_força.innerHTML > span_mente.innerHTML && span_força.innerHTML > span_fe.innerHTML && span_força.innerHTML < span_inteligencia && span_força.innerHTML == span_fortitude.innerHTML) {
-        ClassPesonagem.src = `../assets/warrior.jpg`
+        ClassPesonagem.src = `./assets/warrior.jpg`
       } else if (span_destreza.innerHTML == span_força.innerHTML && span_destreza.innerHTML > span_mente.innerHTML && span_destreza.innerHTML > span_fe.innerHTML && span_destreza.innerHTML > span_arcano.innerHTML) {
-        ClassPesonagem.src = `../assets/samurai.jpg`
+        ClassPesonagem.src = `./assets/samurai.jpg`
       } else if (span_fortitude.innerHTML >= span_força.innerHTML && span_fortitude.innerHTML >= span_destreza.innerHTML && span_fortitude.innerHTML > span_mente.innerHTML && span_fortitude.innerHTML > span_fe.innerHTML && span_inteligencia.innerHTML < span_fortitude.innerHTML && span_fortitude.innerHTML > span_arcano.innerHTML) {
-        ClassPesonagem.src = `../assets/hero.jpg`
+        ClassPesonagem.src = `./assets/hero.jpg`
       } else if (span_arcano.innerHTML == span_força.innerHTML && span_arcano.innerHTML == span_destreza.innerHTML && span_arcano.innerHTML == span_mente.innerHTML && span_arcano.innerHTML == span_fe.innerHTML && span_fe.innerHTML == span_arcano.innerHTML) {
-        ClassPesonagem.src = `../assets/whetch.jpg`
+        ClassPesonagem.src = `./assets/whetch.jpg`
       } else if (span_fe.innerHTML == span_força.innerHTML && span_fe.innerHTML > span_destreza.innerHTML && span_fe.innerHTML > span_mente.innerHTML && span_fe.innerHTML > span_arcano.innerHTML && span_fe.innerHTML > span_inteligencia.innerHTML) {
-        ClassPesonagem.src = `../assets/cofessor.jpg`
+        ClassPesonagem.src = `./assets/cofessor.jpg`
+      } else {
+        ClassPesonagem.src = `./assets/warrior.jpg`
       }
 
       ipt_nivelmax.value = ""
@@ -212,14 +225,13 @@
 
   }
 
-  function Boss() {
-
-    var select = Number(slc_boss.value);
+  function Boss(idBoss) {
 
     var contador = 0
 
-    imagem = ["../assets/boss1.jpg", "../assets/boss2.jpeg", "../assets/boss3.jpg", "../assets/boss4.jpg", "../assets/bossteste.jpg", "../assets/boss6.jpg", "../assets/boss7.jpg", "../assets/boss8.jpg", "../assets/boss9.jpg", "../assets/boss10.jpg", "../assets/boss11.jpg", "../assets/boss12.jpg", "../assets/boss13.jpg"]
+    imagem = ["./assets/boss1.jpg", "./assets/boss2.jpeg", "./assets/boss3.jpg", "./assets/boss4.jpg", "./assets/bossteste.jpg", "./assets/boss6.jpg", "./assets/boss7.jpg", "./assets/boss8.jpg", "./assets/boss9.jpg", "./assets/boss10.jpg", "./assets/boss11.jpg", "./assets/Radagon.jpg", "./assets/boss13.jpg", "./assets/general.jpg", "./assets/malenia.jpg"]
 
+    
     const Boss1 = {
       "runas1": ["12,000", "60,000", "66,000", "67,000", "72,000", "73,000", "75,000", "76,000"],
       "armas1": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
@@ -273,178 +285,384 @@
 
     const Boss11 = {
       "runas11": ["300,000", "450,000", "660,000", "660,000", "660,000", "660,000", "660,000", "660,000"],
-      "armas11": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+      "armas11": ["Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Véu da Lua", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
     }
 
     const Boss12 = {
       "runas12": ["600,000", "700,000", "750,000", "750,000", "750,000", "750,000", "750,000", "750,000"],
-      "armas12": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+      "armas12": ["Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama", "Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada"]
     }
 
     const Boss13 = {
       "runas13": ["700,000", "750,000", "900,000", "900,000", "900,000", "900,000", "900,000", "900,000"],
-      "armas13": ["Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama"]
+      "armas13": ["Espada da Noite e da Chama", "Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema"]
     }
 
-    mostrar1.innerHTML = ""
+    const Boss14 = {
+      "runas13": ["700,000", "750,000", "900,000", "900,000", "900,000", "900,000", "900,000", "900,000"],
+      "armas13": ["Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça", "Espada Grande com Lâmina Enxertada", "Espada da Noite e da Chama"]
+    }
+
+    const Boss15 = {
+      "runas13": ["700,000", "750,000", "900,000", "900,000", "900,000", "900,000", "900,000", "900,000"],
+      "armas13": ["Espada Grande com Lâmina Enxertada", "Uchikatana", "Espada Grande das Ruínas", "Espada Blasfema", "Espada da Noite e da Chama", "Véu da Lua", "Rios de Sangue", "Presa do Cão de Caça"]
+    }
+    
 
 
-    if (select == 1) {
+    if (idBoss == 1) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Margit, the Fell Omen</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Invocar o NPC do lado direito da porta para distrario boss procurar sempre ficar nas costas do boss, lebrar que o boss tem um ataque de pulo com delay esperar um pouco antes de rolar`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[0]}`
       mostrar1.style.display = "flex"
+      mostrar1.innerHTML += `Nv de Jornadas <br><br>`
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Margit, the Fell Omen dropa ${Boss1.runas1[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 1; contador2 <= 8; contador2++) {
-        mostrar1.innerHTML += `A top ${contador2} melhor arma é a ${Boss1.armas1[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss1.armas1[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 2) {
+    } else if (idBoss == 2) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Godrick the Grafted</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Esse boss possui 2 formas a primeira o move set dele é mais rapido, mas tranquilo de desviar cuidado que ele tem a mesma mecanica de ataque de pulo que o primeiro e tem um ataque de terremoto onde o ele ativa 3 vezes, quando ele fica na segunda forma o ele arranca o braça e fica com a cabeça de dragão no lugar, o melhor momento é quando ele pega distancia e vai gospir fogo na tela inteira quando isso acontecer corra para as costas ele e aproveie para bater nele, CUIDADO COM O AGARRÃO.`
+
+      PagBoss.style.display = "flex"
+
+
       imagemBoss.src = `${imagem[1]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Godrick the Grafted dropa ${Boss2.runas2[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss2.armas2[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss2.armas2[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 3) {
+    } else if (idBoss == 3) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Red Wolf of Radagon</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>O lobo de lobo é traquilo de matar não tem muita vida mas é muito rapido e usa magia então aumente sua resistencia a magia e siga enfrente meu amigo.`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[2]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Red Wolf of Radagon dropa ${Boss3.runas3[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss3.armas3[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss3.armas3[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 4) {
+    } else if (idBoss == 4) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Rennala, Queen of the Full Moon</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Rennala possui 2 fases com vida inteiras mas é tranquila tambem ela na primeira fase invoca um monte de criança vc tem que matar as 3 que estao brilhando apos isso ela vai cair no chato indefesa e so bater nela o maximo que der mas CUIDADO que ela quando vai se ergue usa uma explosão poderosa so sair e repetir esse ciclo ate a 2 fase. Ja na segunda fase o Boss vai começar atacar magias sem parar tente usar invocações ou armas grandes para stunar ela e ajuda no dano.`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[3]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Rennala, Queen of the Full Moon dropa ${Boss4.runas4[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss4.armas4[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss4.armas4[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 5) {
+    } else if (idBoss == 5) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Godfrey, First Elden</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>A 1 versao do Godfrey é tranquila, ela é so uma sobra ele usa ataques pesados entao tem tempo de voce conseguir dar um ataque onde e desviar CUIDADO com o pisao no chão dele que da dano e te stuna.`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[4]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Godfrey, First Elden Lord dropa ${Boss5.runas5[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 1; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss5.armas5[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss5.armas5[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 6) {
+    } else if (idBoss == 6) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Morgott, the Omen King</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>O Morgott ele usa milagre entao aumente sua defesa contraisso é importante esse boss usa de ataques rapido e de longa distancia e curta, entao invoque a npc na escada que ela consegue distrarir ele tempo o suficiente para voce matar ele o unico golpe qque voce tem que evitar e o que da um dash e te agarra pois aquilo te mata facil.`
+
+      PagBoss.style.display = "flex"
+
+
       imagemBoss.src = `${imagem[5]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Morgott, the Omen King dropa ${Boss6.runas6[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 1; contador2 <= 8; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss6.armas6[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss6.armas6[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 7) {
+    } else if (idBoss == 7) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Fire Giant</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Ola se voce esta aqui voce chegou no boss mais bugado do game parabens tudo vai depender de RNG entao boa sorte as dicas são rolar no momento certo não adianta ficar desperado quando começar a batalha ele vai atacar o escudo e so rolar quando chegar em voce, sempre ataca a perna dele com ataque de pulo, lembre se de usar o anel para aumentar o dano e sangramente vem sempre acalhar, na segunda vida ele vai soltar piromancia mas são bem lerdas e quando ele cair bata no olho do peito é o local parar dar mais dano.`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[6]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Fire Giant dropa ${Boss7.runas7[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss7.armas7[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss7.armas7[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 8) {
+    } else if (idBoss == 8) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Godskin Duo</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>So 2 dicas contra esses boss chatos use sangramento e procura a invocação de mimica ou outra mais forte de acordo com pacth do jogo que voce esta`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[7]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Godskin Duo dropa ${Boss8.runas8[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss8.armas8[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss8.armas8[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 9) {
+    } else if (idBoss == 9) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Maliketh, the Black Blade</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Bom maliketh se voce esta aqui lembre-se explora tudo antes de matar ele, pois o mapa vai mudar assim que matar ele, as dica são use a mimica e sangramento ele é fracom contra, o moviset dele é o mais rapido de todo logo sem contar que um erro ele drena sua vida intira pois ele da sangramento em voce tambem quem diria né?... bom procure desviar, deviar é mais importante que bater lembre se voce tem a mimica`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[8]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Maliketh, the Black Blade dropa ${Boss9.runas9[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss9.armas9[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss9.armas9[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 10) {
+    } else if (idBoss == 10) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Sir Gideon Ofnir, the All-Knowing</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>A cara por favor é um npc/boss, mas se voce quer ajuda vamos la pega uma arma pesada e stuna esse mago sempre que der, lembre-se de usar resistencia magica`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[9]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Sir Gideon Ofnir, the All-Knowing dropa ${Boss10.runas10[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss10.armas10[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss10.armas10[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 11) {
+    } else if (idBoss == 11) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Hoarah Loux</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Olha esse daqui é chato em entao te entendo, ele tem 2 vida uma mais chata que a outra a 1 ele vai stuna 3 vezes a area inteira tente pular Elden ring permite essa mecanica, e relaxa dar dano não é complicado não como o 1 os ataques dele são lentos entao so bater um ou duas vezes e sair. Ja na segunda faze ele tenta te agarrar sempre entao desvie no momento certo e de um unico ataque fique assim ate matar`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[10]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Hoarah Loux dropa ${Boss11.runas11[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss11.armas11[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss11.armas11[contador2 - 1]}<br/><br/>`
       }
 
-    } else if (select == 12) {
+    } else if (idBoss == 12) {
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Radagon of the Golden Order</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>O Radagon que boss mentiroso né o pior que jundo dele vem de brinde o boss final, bom falar dele agora, ele tem moveset rapido mas daquele daley como o 1 boss entao fique atento a quando ele realmente vai te atacar use todos os anel possiveis de resistencia fisica e de milagre, e ele não leva sangramento, é eu sei chato né, mas uma arma pesada pode stunar ele boa sorte.`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[11]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Radagon of the Golden Order dropa ${Boss12.runas12[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas <br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss12.armas12[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss12.armas12[contador2 - 1]}<br/><br/>`
       }
 
-    } else {
+    } else if (idBoss == 13){
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Elden Beast</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Bom o boss é facil ao mesmo tento não é, procure não gastar tantos estus na batalha passada usei itens de cura ou milagres e procure realmente usar resistencia a milagre agora o maximo que der, e se chegar perto pode bater sem medo a maioria dos ataques dele é longa distancia.`
+
+      PagBoss.style.display = "flex"
+
       imagemBoss.src = `${imagem[12]}`
       mostrar1.style.display = "flex"
       while (contador <= 7) {
         mostrar1.innerHTML += `Na jornada ${contador} o boss Elden Beast dropa ${Boss13.runas13[contador]} runas <br/><br/>`
         contador++
       }
-
+      Armas.innerHTML += `Melhores Armas<br><br>`
       for (var contador2 = 0; contador2 <= 7; contador2++) {
-        mostrar2.innerHTML += `A top ${contador2} melhor arma é a ${Boss13.armas13[contador2 - 1]}<br/><br/>`
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss13.armas13[contador2 - 1]}<br/><br/>`
+      }
+
+    }else if (idBoss == 14){
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Starscourge Radahn</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Esse boss hoje em dia ta mais facil, a batalha dele é no meio do deserto procure sempre invocar os NPC sempre que der pois eles iram salvar sua vida alem de te ajudar a dar dano e distrair o boss, nessa batalho voce pode usar o cavalo use isso ao seu favor, voce pode usar para bater no boss e sair rapido mas cauidado para não stunado em cima dele, quando o boss der o ataque especial de queda de meteoro corra para longe dos NPCs porque ele vai foca-los.`
+
+      PagBoss.style.display = "flex"
+
+      imagemBoss.src = `${imagem[13]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Starscourge Radahn dropa ${Boss13.runas13[contador]} runas <br/><br/>`
+        contador++
+      }
+      Armas.innerHTML += `Melhores Armas<br><br>`
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss13.armas13[contador2 - 1]}<br/><br/>`
+      }
+
+    }else{
+
+      Linha1.style.display = "none"
+      Linha2.style.display = "none"
+      Linha3.style.display = "none"
+
+      SUBTITULO.innerHTML = `<h4>Malenia Blade Of Miquella</h4>`
+
+      textoDica.innerHTML = `Dica<br><br>Malenia o boss vai forte do jogo e para mim o mais bonito, as dicas são não levar dano toda hora pois ela se cura mesmo batendo no escudo entao desvia que é melhor, a boss tem 2 fazes quase iguais com a vida total a diferencia é que na segunda vida ela aplica podridão entao se voce tiver antidoto esta tudo bem se não voce morreu meu amigo. CUIDADO COM O ATAQUE que ela pula e sai cortando tudo pela frente pra desviar disso role para frente em seguida paratras e depois para longe dela.`
+
+      PagBoss.style.display = "flex"
+
+      imagemBoss.src = `${imagem[14]}`
+      mostrar1.style.display = "flex"
+      while (contador <= 7) {
+        mostrar1.innerHTML += `Na jornada ${contador} o boss Malenia Blade Of Miquella dropa ${Boss13.runas13[contador]} runas <br/><br/>`
+        contador++
+      }
+      Armas.innerHTML += `Melhores Armas<br><br>`
+      for (var contador2 = 0; contador2 <= 7; contador2++) {
+        Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss13.armas13[contador2 - 1]}<br/><br/>`
       }
 
     }
+  }
+
+
+  function voltar(){
+    window.location = "./builds.html"
   }
 </script>
