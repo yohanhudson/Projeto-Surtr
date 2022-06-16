@@ -102,25 +102,25 @@
         </div>
         <div class="containerImagems">
           <div id="Linha1" class="ContainerLinhaImagens">
-            <div class="imagem_Boss"><img onclick="Boss(1)" class="idImagem" src="./assets/boss1.jpg" alt=""></div>
-            <div class="imagem_Boss"><img onclick="Boss(2)" class="idImagem" src="./assets/boss2.jpeg" alt=""></div>
-            <div class="imagem_Boss"><img onclick="Boss(3)" class="idImagem" src="./assets/boss3.jpg" alt=""></div>
-            <div class="imagem_Boss"><img onclick="Boss(4)" class="idImagem" src="./assets/boss4.jpg" alt=""></div>
-            <div class="imagem_Boss"><img onclick="Boss(5)" class="idImagem" src="./assets/bossteste.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(1)" class="idImagem" src="../assets/boss1.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(2)" class="idImagem" src="../assets/boss2.jpeg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(3)" class="idImagem" src="../assets/boss3.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(4)" class="idImagem" src="../assets/boss4.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(5)" class="idImagem" src="../assets/bossteste.jpg" alt=""></div>
           </div>
           <div id="Linha2" class="ContainerLinhaImagens">
-            <div class="imagem_Boss"><img onclick="Boss(6)" class="idImagem" src="./assets/boss6.jpg" alt=""></div>
-            <div class="imagem_Boss"><img onclick="Boss(7)" class="idImagem" src="./assets/boss7.jpg" alt=""></div>
-            <div class="imagem_Boss"><img onclick="Boss(8)" class="idImagem" src="./assets/boss8.jpg" alt=""></div>
-            <div class="imagem_Boss"><img onclick="Boss(9)" class="idImagem" src="./assets/boss9.jpg" alt=""></div>
-            <div class="imagem_Boss"><img onclick="Boss(10)" class="idImagem" src="./assets/boss10.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(6)" class="idImagem" src="../assets/boss6.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(7)" class="idImagem" src="../assets/boss7.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(8)" class="idImagem" src="../assets/boss8.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(9)" class="idImagem" src="../assets/boss9.jpg" alt=""></div>
+            <div class="imagem_Boss"><img onclick="Boss(10)" class="idImagem" src="../assets/boss10.jpg" alt=""></div>
           </div>
           <div id="Linha3" class="ContainerLinhaImagens2">
-            <div class="imagem_Boss2"><img onclick="Boss(11)" class="idImagem" src="./assets/boss11.jpg" alt=""></div>
-            <div class="imagem_Boss2"><img onclick="Boss(12)" class="idImagem" src="./assets/boss12.jpg" alt=""></div>
-            <div class="imagem_Boss2"><img onclick="Boss(13)" class="idImagem" src="./assets/boss13.jpg" alt=""></div>
-            <div class="imagem_Boss2"><img onclick="Boss(14)" class="idImagem" src="./assets/general.jpg" alt=""></div>
-            <div class="imagem_Boss2"><img onclick="Boss(15)" class="idImagem" src="./assets/malenia.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(11)" class="idImagem" src="../assets/boss11.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(12)" class="idImagem" src="../assets/boss12.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(13)" class="idImagem" src="../assets/boss13.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(14)" class="idImagem" src="../assets/general.jpg" alt=""></div>
+            <div class="imagem_Boss2"><img onclick="Boss(15)" class="idImagem" src="../assets/malenia.jpg" alt=""></div>
           </div>
           <div id="PagBoss" class="ContainerPerfil">
             <div class="DivPerfilArma">
@@ -197,27 +197,27 @@
 
 
       if (span_mente.innerHTML >= span_inteligencia.innerHTML && span_mente.innerHTML > span_fe.innerHTML && span_mente.innerHTML > span_arcano.innerHTML && span_mente.innerHTML > span_força.innerHTML && span_mente.innerHTML > span_destreza.innerHTML) {
-        ClassPesonagem.src = `./assets/astrologer.jpg`
+        ClassPesonagem.src = `../assets/astrologer.jpg`
       } else if (span_destreza.innerHTML > span_força.innerHTML && span_destreza.innerHTML > span_mente.innerHTML && span_destreza.innerHTML > span_inteligencia.innerHTML && span_destreza.innerHTML > span_arcano.innerHTML && span_destreza.innerHTML > span_fe.innerHTML) {
-        ClassPesonagem.src = `./assets/bandit.jpg`
+        ClassPesonagem.src = `../assets/bandit.jpg`
       } else if (span_força.innerHTML > span_destreza.innerHTML && span_força.innerHTML > span_mente.innerHTML && span_força.innerHTML > span_inteligencia.innerHTML && span_força.innerHTML > span_fe.innerHTML && span_força.innerHTML >= span_arcano.innerHTML) {
-        ClassPesonagem.src = `./assets/vagabond.jpg`
+        ClassPesonagem.src = `../assets/vagabond.jpg`
       } else if (span_fe.innerHTML > span_força.innerHTML && span_fe.innerHTML > span_destreza.innerHTML && span_fe.innerHTMLL > span_mente.innerHTML && span_inteligencia.innerHTML < span_fe.innerHTML && span_fe.innerHTML > span_arcano.innerHTML) {
-        ClassPesonagem.src = `./assets/prophet.jpg`
+        ClassPesonagem.src = `../assets/prophet.jpg`
       } else if (span_arcano.innerHTML >= span_força.innerHTML && span_arcano.innerHTML >= span_destreza.innerHTML && span_arcano.innerHTML > span_mente.innerHTML && span_arcano.innerHTML > span_fe.innerHTML && span_inteligencia.innerHTML < span_arcano.innerHTML) {
-        ClassPesonagem.src = `./assets/prisoner.jpg`
+        ClassPesonagem.src = `../assets/prisoner.jpg`
       } else if (span_arcano.innerHTML < span_força.innerHTML && span_força.innerHTML == span_destreza.innerHTML && span_força.innerHTML > span_mente.innerHTML && span_força.innerHTML > span_fe.innerHTML && span_força.innerHTML < span_inteligencia && span_força.innerHTML == span_fortitude.innerHTML) {
-        ClassPesonagem.src = `./assets/warrior.jpg`
+        ClassPesonagem.src = `../assets/warrior.jpg`
       } else if (span_destreza.innerHTML == span_força.innerHTML && span_destreza.innerHTML > span_mente.innerHTML && span_destreza.innerHTML > span_fe.innerHTML && span_destreza.innerHTML > span_arcano.innerHTML) {
-        ClassPesonagem.src = `./assets/samurai.jpg`
+        ClassPesonagem.src = `../assets/samurai.jpg`
       } else if (span_fortitude.innerHTML >= span_força.innerHTML && span_fortitude.innerHTML >= span_destreza.innerHTML && span_fortitude.innerHTML > span_mente.innerHTML && span_fortitude.innerHTML > span_fe.innerHTML && span_inteligencia.innerHTML < span_fortitude.innerHTML && span_fortitude.innerHTML > span_arcano.innerHTML) {
-        ClassPesonagem.src = `./assets/hero.jpg`
+        ClassPesonagem.src = `../assets/hero.jpg`
       } else if (span_arcano.innerHTML == span_força.innerHTML && span_arcano.innerHTML == span_destreza.innerHTML && span_arcano.innerHTML == span_mente.innerHTML && span_arcano.innerHTML == span_fe.innerHTML && span_fe.innerHTML == span_arcano.innerHTML) {
-        ClassPesonagem.src = `./assets/whetch.jpg`
+        ClassPesonagem.src = `../assets/whetch.jpg`
       } else if (span_fe.innerHTML == span_força.innerHTML && span_fe.innerHTML > span_destreza.innerHTML && span_fe.innerHTML > span_mente.innerHTML && span_fe.innerHTML > span_arcano.innerHTML && span_fe.innerHTML > span_inteligencia.innerHTML) {
-        ClassPesonagem.src = `./assets/cofessor.jpg`
+        ClassPesonagem.src = `../assets/cofessor.jpg`
       } else {
-        ClassPesonagem.src = `./assets/warrior.jpg`
+        ClassPesonagem.src = `../assets/warrior.jpg`
       }
 
       ipt_nivelmax.value = ""
@@ -229,7 +229,7 @@
 
     var contador = 0
 
-    imagem = ["./assets/boss1.jpg", "./assets/boss2.jpeg", "./assets/boss3.jpg", "./assets/boss4.jpg", "./assets/bossteste.jpg", "./assets/boss6.jpg", "./assets/boss7.jpg", "./assets/boss8.jpg", "./assets/boss9.jpg", "./assets/boss10.jpg", "./assets/boss11.jpg", "./assets/Radagon.jpg", "./assets/boss13.jpg", "./assets/general.jpg", "./assets/malenia.jpg"]
+    imagem = ["../assets/boss1.jpg", "../assets/boss2.jpeg", "../assets/boss3.jpg", "../assets/boss4.jpg", "../assets/bossteste.jpg", "../assets/boss6.jpg", "../assets/boss7.jpg", "../assets/boss8.jpg", "../assets/boss9.jpg", "../assets/boss10.jpg", "../assets/boss11.jpg", "../assets/Radagon.jpg", "../assets/boss13.jpg", "../assets/general.jpg", "../assets/malenia.jpg"]
 
     
     const Boss1 = {
@@ -354,7 +354,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss2.armas2[contador2 - 1]}<br/><br/>`
       }
 
@@ -377,7 +377,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss3.armas3[contador2 - 1]}<br/><br/>`
       }
 
@@ -400,7 +400,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss4.armas4[contador2 - 1]}<br/><br/>`
       }
 
@@ -470,7 +470,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss7.armas7[contador2 - 1]}<br/><br/>`
       }
 
@@ -493,7 +493,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss8.armas8[contador2 - 1]}<br/><br/>`
       }
 
@@ -516,7 +516,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss9.armas9[contador2 - 1]}<br/><br/>`
       }
 
@@ -539,7 +539,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss10.armas10[contador2 - 1]}<br/><br/>`
       }
 
@@ -562,7 +562,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss11.armas11[contador2 - 1]}<br/><br/>`
       }
 
@@ -585,7 +585,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas <br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss12.armas12[contador2 - 1]}<br/><br/>`
       }
 
@@ -608,7 +608,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas<br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss13.armas13[contador2 - 1]}<br/><br/>`
       }
 
@@ -631,7 +631,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas<br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss13.armas13[contador2 - 1]}<br/><br/>`
       }
 
@@ -654,7 +654,7 @@
         contador++
       }
       Armas.innerHTML += `Melhores Armas<br><br>`
-      for (var contador2 = 0; contador2 <= 7; contador2++) {
+      for (var contador2 = 1; contador2 <= 7; contador2++) {
         Armas.innerHTML += `A top ${contador2} melhor arma é a ${Boss13.armas13[contador2 - 1]}<br/><br/>`
       }
 
